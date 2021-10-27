@@ -18,7 +18,7 @@ class BottomNavigationActivity : AppCompatActivity() {
         val categorias = CategoriasFragment()
 
         replaceFragment(home)
-        
+
         binding.bottomNavigation.setOnItemReselectedListener {
 
             when (it.itemId) {
