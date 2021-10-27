@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/home"
+        android:title="Home" />
+    <item
+        android:id="@+id/categorias"
+        android:icon="@drawable/loupe"
+        android:title="Categorias" />
+    <item
+        android:id="@+id/sacola"
+        android:icon="@drawable/add_to_basket"
+        android:title="Sacola" />
+    <item
+        android:id="@+id/conta"
+        android:icon="@drawable/user"
+        android:title="Conta" />
+</menu>
