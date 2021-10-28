@@ -16,6 +16,7 @@ class BottomNavigationActivity : AppCompatActivity() {
 
         val home = HomeFragment()
         val categorias = CategoriasFragment()
+        var account = AccountFragment()
 
         replaceFragment(home)
 
@@ -24,6 +25,7 @@ class BottomNavigationActivity : AppCompatActivity() {
             when (it.itemId) {
                 R.id.home -> replaceFragment(home)
                 R.id.categorias -> replaceFragment(categorias)
+                R.id.conta -> replaceFragment(account)
                 else -> "Invalid "
             }
 
