@@ -15,7 +15,7 @@ class BottomNavigationActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val home = HomeFragment()
-        val categorias = CategoriasFragment()
+        val categorias = CategoriesFragment()
         var account = AccountFragment()
 
         replaceFragment(home)

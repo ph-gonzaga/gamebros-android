@@ -16,7 +16,7 @@
         android:elevation="3dp"
         app:itemIconSize="30dp"
         app:itemIconTint="@drawable/item_selector"
-        app:itemRippleColor="@android:color/transparent"
+        app:itemRippleColor="@color/home"
         app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
