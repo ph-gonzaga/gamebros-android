@@ -9,7 +9,7 @@
         <entry key="app/src/main/res/drawable/rounder_circle.xml" value="0.2625" />
         <entry key="app/src/main/res/layout/activity_bottom_navigation.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_categorias.xml" value="0.17552083333333332" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.33" />
         <entry key="app/src/main/res/menu/bottomnav.xml" value="0.25" />
       </map>
     </option>

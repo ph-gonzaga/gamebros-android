@@ -19,7 +19,7 @@ class BottomNavigationActivity : AppCompatActivity() {
 
         replaceFragment(home)
 
-        binding.bottomNavigation.setOnItemReselectedListener {
+        binding.bottomNavigation.setOnItemSelectedListener {
 
             when (it.itemId) {
                 R.id.home -> replaceFragment(home)
