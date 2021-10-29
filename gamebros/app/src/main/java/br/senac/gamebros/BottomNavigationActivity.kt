@@ -37,7 +37,7 @@ class BottomNavigationActivity : AppCompatActivity() {
     private fun replaceFragment(fragment: Fragment){
         if(fragment !=null){
             val transaction = supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.main_container, fragment).commit()
+            transaction.replace(R.id.container, fragment).commit()
         }
     }
 
