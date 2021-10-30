@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/home"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".AccountFragment">
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Meu cadastro"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view6"
+            android:layout_width="0dp"
+            android:layout_height="313dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/circular_item"
+            android:backgroundTint="#EFF9FF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editFieldNomeContaLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Nome"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="#69B7FF"
+            app:layout_constraintEnd_toEndOf="@+id/view6"
+            app:layout_constraintStart_toStartOf="@+id/view6"
+            app:layout_constraintTop_toTopOf="@+id/view6">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editFieldNomeConta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/home"
+                android:textColor="#2196F3" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editFieldCelularContaLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="E-mail"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="#69B7FF"
+            app:layout_constraintEnd_toEndOf="@+id/view6"
+            app:layout_constraintStart_toStartOf="@+id/view6"
+            app:layout_constraintTop_toBottomOf="@+id/editFieldNomeContaLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editFieldEmailConta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/home"
+                android:textColor="#2196F3" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editFieldCelularCelularLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Celular"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="#69B7FF"
+            app:layout_constraintEnd_toEndOf="@+id/view6"
+            app:layout_constraintStart_toStartOf="@+id/view6"
+            tools:layout_editor_absoluteY="346dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editFieldCelularConta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/home"
+                android:textColor="#2196F3" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnSalvar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/rounded"
+            android:text="Salvar"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="#69B7FF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        =
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

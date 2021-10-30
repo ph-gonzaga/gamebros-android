@@ -22,12 +22,13 @@
     <View
         android:id="@+id/view"
         android:layout_width="0dp"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/rounded"
         android:backgroundTint="#F4F4F4"
+        android:elevation="1dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,11 +39,14 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@android:color/transparent"
+        android:elevation="1dp"
         android:ems="10"
         android:hint="O que voce procura?"
         android:inputType="textPersonName"
         android:textAlignment="center"
-        android:textSize="14sp"
+        android:textColorHint="#5A5A5A"
+        android:textSize="16sp"
+        android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="@+id/view"
         app:layout_constraintHorizontal_bias="0.16"
@@ -55,7 +59,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="24dp"
         android:layout_marginBottom="12dp"
         android:text="Destaques"
         android:textAlignment="textStart"
@@ -70,7 +74,7 @@
         android:id="@+id/view2"
         android:layout_width="22dp"
         android:layout_height="22dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="24dp"
         android:background="#EF2E17"
         app:layout_constraintEnd_toStartOf="@+id/textView"
         app:layout_constraintHorizontal_bias="0.94"
@@ -132,7 +136,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Mario"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/textView4"
@@ -140,7 +145,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Pokemon"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/textView5"
@@ -148,14 +154,15 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Zelda"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textSize="16sp" />
     </LinearLayout>
 
     <View
         android:id="@+id/view4"
         android:layout_width="22dp"
         android:layout_height="22dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:background="#03A9F4"
         app:layout_constraintEnd_toStartOf="@+id/textView7"
         app:layout_constraintHorizontal_bias="0.94"
@@ -169,7 +176,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="16dp"
         android:src="@drawable/img"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -182,7 +189,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:text="Novidades"
         android:textSize="16sp"

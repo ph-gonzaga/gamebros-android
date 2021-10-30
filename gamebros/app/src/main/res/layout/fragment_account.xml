@@ -20,6 +20,7 @@
             android:layout_marginTop="24dp"
             android:text="Minha conta"
             android:textSize="20sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -29,7 +30,7 @@
             android:layout_width="0dp"
             android:layout_height="98dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/circular_item"
             android:backgroundTint="#CAE1F1"
@@ -43,7 +44,7 @@
             android:layout_width="0dp"
             android:layout_height="200dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="115dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/circular_item"
             android:backgroundTint="#FFE8E8"
@@ -53,15 +54,16 @@
             app:layout_constraintTop_toBottomOf="@+id/view3" />
 
         <Button
-            android:id="@+id/btnMyOrders"
-            android:layout_width="0dp"
-            android:layout_height="53dp"
+            android:id="@+id/btnMeusPedidos"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="24dp"
             android:background="@drawable/circular_item"
             android:text="Meus Pedidos"
             android:textColor="#000000"
-            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textStyle="normal"
             app:backgroundTint="#BFE1F4"
             app:layout_constraintEnd_toStartOf="@+id/imageView2"
             app:layout_constraintHorizontal_bias="0.0"
@@ -80,14 +82,15 @@
             app:layout_constraintTop_toTopOf="@+id/view5" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btnCadastro"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="24dp"
             android:background="@drawable/circular_item"
             android:text="Cadastro"
             android:textColor="#000000"
-            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textStyle="normal"
             app:backgroundTint="#FBD2D2"
             app:layout_constraintBottom_toBottomOf="@+id/view5"
             app:layout_constraintEnd_toEndOf="@+id/view5"
@@ -97,7 +100,7 @@
             app:layout_constraintVertical_bias="0.31" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/btnSenha"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -106,28 +109,32 @@
             android:text="Redefinir Senha"
             android:textAllCaps="false"
             android:textColor="#000000"
-            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textStyle="normal"
             app:backgroundTint="#FBD2D2"
             app:layout_constraintEnd_toEndOf="@+id/view5"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/imageView4"
-            app:layout_constraintTop_toBottomOf="@+id/button2" />
+            app:layout_constraintTop_toBottomOf="@+id/btnCadastro" />
 
         <Button
-            android:id="@+id/btnLogout"
+            android:id="@+id/btnSalvar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="24dp"
             android:background="@drawable/rounded"
             android:text="Sair"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:backgroundTint="#8A8A8A"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view5" />
 
         <ImageView
             android:id="@+id/imageView2"
