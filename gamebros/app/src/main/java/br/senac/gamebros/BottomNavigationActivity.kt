@@ -5,6 +5,7 @@ import br.senac.gamebros.databinding.ActivityBottomNavigationBinding
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import br.senac.gamebros.account.AccountFragment
+import br.senac.gamebros.cart.CartEmptyFragment
 import br.senac.gamebros.categories.CategoriesFragment
 import br.senac.gamebros.home.HomeFragment
 
@@ -19,7 +20,8 @@ class BottomNavigationActivity : AppCompatActivity() {
 
         val home = HomeFragment()
         val categorias = CategoriesFragment()
-        var account = AccountFragment()
+        var conta = AccountFragment()
+        var sacolaVazia = CartEmptyFragment()
 
         replaceFragment(home)
 
@@ -28,7 +30,8 @@ class BottomNavigationActivity : AppCompatActivity() {
             when (it.itemId) {
                 R.id.home -> replaceFragment(home)
                 R.id.categorias -> replaceFragment(categorias)
-                R.id.conta -> replaceFragment(account)
+                R.id.conta -> replaceFragment(conta)
+                R.id.sacola -> replaceFragment(sacolaVazia)
                 else -> "Invalid "
             }
 
