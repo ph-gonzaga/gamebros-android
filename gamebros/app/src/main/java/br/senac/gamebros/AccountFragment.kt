@@ -19,6 +19,12 @@ class AccountFragment : Fragment() {
                 parentFragmentManager.beginTransaction().replace(it.id,SignupFragment.newInstance()).addToBackStack("fragAccount").commit()
             }
         }
+
+        binding.btnEndereco.setOnClickListener {
+            container?.let {
+                parentFragmentManager.beginTransaction().replace(it.id,AddressFragment.newInstance()).addToBackStack("fragAccount").commit()
+            }
+        }
         return binding.root
 
     }

@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/home"
+    android:textSize="16sp"
     android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,10 +28,10 @@
 
         <View
             android:id="@+id/view6"
-            android:layout_width="377dp"
+            android:layout_width="0dp"
             android:layout_height="244dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/circular_item"
             android:backgroundTint="#FDFDFD"
@@ -86,7 +87,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/editFieldCelularLayout"
+            android:id="@+id/editFieldNumeroLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -100,7 +101,7 @@
             app:layout_constraintTop_toBottomOf="@+id/editFieldEmailContaLayout">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editFieldCelularConta"
+                android:id="@+id/editFieldNumero"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/home"

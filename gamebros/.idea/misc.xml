@@ -8,11 +8,12 @@
         <entry key="app/src/main/res/drawable/item_selector.xml" value="0.20572916666666666" />
         <entry key="app/src/main/res/drawable/rounded.xml" value="0.20572916666666666" />
         <entry key="app/src/main/res/drawable/rounder_circle.xml" value="0.2625" />
-        <entry key="app/src/main/res/layout/activity_bottom_navigation.xml" value="0.15789473684210525" />
+        <entry key="app/src/main/res/layout/activity_bottom_navigation.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_account.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_categorias.xml" value="0.17552083333333332" />
         <entry key="app/src/main/res/layout/fragment_categories.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/fragment_password.xml" value="0.18436553744580955" />
         <entry key="app/src/main/res/layout/fragment_signup.xml" value="0.25" />
         <entry key="app/src/main/res/menu/bottomnav.xml" value="0.25" />
       </map>
@@ -23,5 +24,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.18436553744580955" />
+      </ProjectState>
+    </option>
   </component>
 </project>
