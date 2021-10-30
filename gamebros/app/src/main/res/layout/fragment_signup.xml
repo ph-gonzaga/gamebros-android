@@ -27,13 +27,13 @@
 
         <View
             android:id="@+id/view6"
-            android:layout_width="0dp"
-            android:layout_height="313dp"
+            android:layout_width="377dp"
+            android:layout_height="244dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/circular_item"
-            android:backgroundTint="#EFF9FF"
+            android:backgroundTint="#FDFDFD"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -63,7 +63,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/editFieldCelularContaLayout"
+            android:id="@+id/editFieldEmailContaLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -86,15 +86,18 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/editFieldCelularCelularLayout"
+            android:id="@+id/editFieldCelularLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
             android:hint="Celular"
             android:textColorHint="@color/black"
             app:boxStrokeColor="#69B7FF"
             app:layout_constraintEnd_toEndOf="@+id/view6"
             app:layout_constraintStart_toStartOf="@+id/view6"
-            tools:layout_editor_absoluteY="346dp">
+            app:layout_constraintTop_toBottomOf="@+id/editFieldEmailContaLayout">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editFieldCelularConta"
@@ -111,7 +114,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginBottom="68dp"
             android:background="@drawable/rounded"
             android:text="Salvar"
             android:textSize="20sp"
@@ -121,6 +124,22 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="0dp"
+            android:layout_height="267dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/mega_"
+            app:layout_constraintBottom_toTopOf="@+id/btnSalvar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.529"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view6"
+            app:layout_constraintVertical_bias="0.159" />
 
         =
     </androidx.constraintlayout.widget.ConstraintLayout>
