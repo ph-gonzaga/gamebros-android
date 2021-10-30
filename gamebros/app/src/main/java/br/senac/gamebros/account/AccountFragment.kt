@@ -1,4 +1,4 @@
-package br.senac.gamebros
+package br.senac.gamebros.account
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -16,13 +16,17 @@ class AccountFragment : Fragment() {
 
         binding.btnCadastro.setOnClickListener {
             container?.let {
-                parentFragmentManager.beginTransaction().replace(it.id,SignupFragment.newInstance()).addToBackStack("fragAccount").commit()
+                parentFragmentManager.beginTransaction().replace(it.id,
+                    SignupFragment.newInstance()
+                ).addToBackStack("fragAccount").commit()
             }
         }
 
         binding.btnEndereco.setOnClickListener {
             container?.let {
-                parentFragmentManager.beginTransaction().replace(it.id,AddressFragment.newInstance()).addToBackStack("fragAccount").commit()
+                parentFragmentManager.beginTransaction().replace(it.id,
+                    AddressFragment.newInstance()
+                ).addToBackStack("fragAccount").commit()
             }
         }
         return binding.root

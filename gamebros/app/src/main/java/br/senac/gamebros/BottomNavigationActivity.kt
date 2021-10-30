@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import br.senac.gamebros.databinding.ActivityBottomNavigationBinding
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import br.senac.gamebros.account.AccountFragment
+import br.senac.gamebros.categories.CategoriesFragment
+import br.senac.gamebros.home.HomeFragment
 
 class BottomNavigationActivity : AppCompatActivity() {
 
