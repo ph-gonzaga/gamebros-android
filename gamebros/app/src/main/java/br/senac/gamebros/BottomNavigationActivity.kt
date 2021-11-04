@@ -5,9 +5,11 @@ import br.senac.gamebros.databinding.ActivityBottomNavigationBinding
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import br.senac.gamebros.account.AccountFragment
+import br.senac.gamebros.adapter.AdapterProduct
 import br.senac.gamebros.cart.CartEmptyFragment
 import br.senac.gamebros.categories.CategoriesFragment
 import br.senac.gamebros.home.HomeFragment
+import br.senac.gamebros.model.Product
 
 class BottomNavigationActivity : AppCompatActivity() {
 

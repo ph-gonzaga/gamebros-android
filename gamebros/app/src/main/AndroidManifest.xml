@@ -10,14 +10,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Gamebros">
         <activity
-            android:name=".BottomNavigationActivity"
-            android:exported="true" >
+            android:name=".login.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ListProductActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".BottomNavigationActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
