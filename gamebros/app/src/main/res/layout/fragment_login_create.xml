@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/home"
+    android:textSize="16sp"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".login.LoginCreateFragment">
+
+        <TextView
+            android:id="@+id/textOla"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            android:text="Inscreva-se"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:text="Criar uma conta é simples e rápido!"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textOla" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editFieldCreateUserNameLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="33dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Informe seu Nome"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="#AA9E30"
+            app:hintTextColor="#9E8E00"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInfo">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editFieldCreateUserNome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/home"
+                android:inputType="none|textEmailAddress"
+                android:textColor="#393939"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editFieldCreateUserEmailLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="33dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Informe seu Email"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="#AA9E30"
+            app:hintTextColor="#9E8E00"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editFieldCreateUserNameLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editFieldCreateUserEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/home"
+                android:inputType="none|textEmailAddress"
+                android:textColor="#393939"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editFieldCreateUserTelLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="33dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Informe seu Telefone"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="#AA9E30"
+            app:hintTextColor="#9E8E00"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editFieldCreateUserEmailLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editFieldCreateUserTel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/home"
+                android:inputType="none|textEmailAddress"
+                android:textColor="#393939"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editFieldCreateUserPassLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="33dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Informe sua Senha"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="#AA9E30"
+            app:hintTextColor="#9E8E00"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editFieldCreateUserTelLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editFieldCreateUserPass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/home"
+                android:inputType="none|textEmailAddress"
+                android:textColor="#393939"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnCreateUser"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/circular_item"
+            android:text="Finalizar"
+            android:textColor="#070707"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:backgroundTint="#FFE974"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editFieldCreateUserPassLayout" />
+
+<!--        <Button-->
+<!--            android:id="@+id/btnLoginUser"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="32dp"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            android:layout_marginEnd="32dp"-->
+<!--            android:background="@drawable/circular_item"-->
+<!--            android:text="Login"-->
+<!--            android:textColor="#070707"-->
+<!--            android:textSize="16sp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:backgroundTint="#FFF7C7"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.0"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/btnCreateUser"-->
+<!--           />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

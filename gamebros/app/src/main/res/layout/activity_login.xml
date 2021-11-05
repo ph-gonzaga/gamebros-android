@@ -47,3 +47,4 @@ tools:context=".login.LoginActivity">
         app:srcCompat="@drawable/detective_pikachu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
