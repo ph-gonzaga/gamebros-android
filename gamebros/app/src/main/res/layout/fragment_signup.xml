@@ -15,7 +15,7 @@
         tools:context=".account.AccountFragment">
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/textSacolaTituloVazio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -27,7 +27,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <View
-            android:id="@+id/view6"
+            android:id="@+id/viewDetalheProduto"
             android:layout_width="0dp"
             android:layout_height="244dp"
             android:layout_marginStart="16dp"
@@ -38,7 +38,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+            app:layout_constraintTop_toBottomOf="@+id/textSacolaTituloVazio" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/editFieldNomeContaLayout"
@@ -50,9 +50,9 @@
             android:hint="Nome"
             android:textColorHint="@color/black"
             app:boxStrokeColor="#69B7FF"
-            app:layout_constraintEnd_toEndOf="@+id/view6"
-            app:layout_constraintStart_toStartOf="@+id/view6"
-            app:layout_constraintTop_toTopOf="@+id/view6">
+            app:layout_constraintEnd_toEndOf="@+id/viewDetalheProduto"
+            app:layout_constraintStart_toStartOf="@+id/viewDetalheProduto"
+            app:layout_constraintTop_toTopOf="@+id/viewDetalheProduto">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editFieldNomeConta"
@@ -73,8 +73,8 @@
             android:hint="E-mail"
             android:textColorHint="@color/black"
             app:boxStrokeColor="#69B7FF"
-            app:layout_constraintEnd_toEndOf="@+id/view6"
-            app:layout_constraintStart_toStartOf="@+id/view6"
+            app:layout_constraintEnd_toEndOf="@+id/viewDetalheProduto"
+            app:layout_constraintStart_toStartOf="@+id/viewDetalheProduto"
             app:layout_constraintTop_toBottomOf="@+id/editFieldNomeContaLayout">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -96,8 +96,8 @@
             android:hint="Celular"
             android:textColorHint="@color/black"
             app:boxStrokeColor="#69B7FF"
-            app:layout_constraintEnd_toEndOf="@+id/view6"
-            app:layout_constraintStart_toStartOf="@+id/view6"
+            app:layout_constraintEnd_toEndOf="@+id/viewDetalheProduto"
+            app:layout_constraintStart_toStartOf="@+id/viewDetalheProduto"
             app:layout_constraintTop_toBottomOf="@+id/editFieldEmailContaLayout">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -139,7 +139,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.529"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view6"
+            app:layout_constraintTop_toBottomOf="@+id/viewDetalheProduto"
             app:layout_constraintVertical_bias="0.159" />
 
         =

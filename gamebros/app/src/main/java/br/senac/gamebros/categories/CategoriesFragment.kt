@@ -6,10 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import br.senac.gamebros.R
-import br.senac.gamebros.account.SignupFragment
 import br.senac.gamebros.databinding.FragmentCategoriesBinding
-import br.senac.gamebros.databinding.FragmentListProductBinding
-import br.senac.gamebros.products.ListProductFragment
+import br.senac.gamebros.products.ProductFragment
 
 class CategoriesFragment : Fragment() {
 
@@ -21,7 +19,7 @@ class CategoriesFragment : Fragment() {
         binding.btnCategorieProduct.setOnClickListener {
             container?.let {
                 parentFragmentManager.beginTransaction().replace(it.id,
-                    ListProductFragment.newInstance()
+                    ProductFragment.newInstance()
                 ).addToBackStack("fragProduct").commit()
             }
         }

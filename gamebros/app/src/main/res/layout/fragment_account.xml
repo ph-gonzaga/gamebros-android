@@ -14,7 +14,7 @@
         tools:context=".account.AccountFragment">
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/textSacolaTituloVazio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -37,7 +37,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+            app:layout_constraintTop_toBottomOf="@+id/textSacolaTituloVazio" />
 
         <View
             android:id="@+id/view5"
