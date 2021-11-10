@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/home"
+    android:textSize="16sp"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".checkout.PurchaseFragment">
+
+        <TextView
+            android:id="@+id/textCompraTitulo"
+            android:layout_width="304dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="68dp"
+            android:text="Compra finalizada com  sucesso!"
+            android:textAlignment="center"
+            android:textColor="#0069E9"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnAcessarPedidos"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="68dp"
+            android:background="@drawable/rounded"
+            android:text="Meus Pedidos"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="#0069E9"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textPedidoNumero" />
+
+        <View
+            android:id="@+id/viewDetalheProduto2"
+            android:layout_width="191dp"
+            android:layout_height="310dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/circular_item"
+            android:backgroundTint="#1138FF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textCompraTitulo" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="0dp"
+            android:layout_height="280dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/mario_compra"
+            app:layout_constraintStart_toStartOf="@+id/viewDetalheProduto2"
+            app:layout_constraintTop_toTopOf="@+id/viewDetalheProduto2" />
+
+        <TextView
+            android:id="@+id/labelPedido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:text="Pedido"
+            android:textColor="#FF0123"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+        <TextView
+            android:id="@+id/textPedidoNumero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="10112021-1"
+            android:textColor="#FF0123"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/labelPedido" />
+
+        =
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

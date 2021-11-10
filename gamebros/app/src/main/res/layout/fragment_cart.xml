@@ -8,11 +8,11 @@
     tools:context=".cart.CartFragment">
 
     <TextView
-        android:id="@+id/textSacolaTitulo"
+        android:id="@+id/tituloSacola"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Meu endereço"
+        android:text="Minha Sacola"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,10 +24,56 @@
         android:layout_width="0dp"
         android:layout_height="411dp"
         android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="130dp" />
+        app:layout_constraintTop_toBottomOf="@+id/tituloSacola" />
+
+    <Button
+        android:id="@+id/btnCheckoutEndereco"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/circular_item"
+        android:text="Checkout"
+        android:textSize="18sp"
+        app:backgroundTint="#BF27B54F"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textCarrinhoSubtotal" />
+
+    <TextView
+        android:id="@+id/labelSacolaSubtotal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="44dp"
+        android:text="SubTotal"
+        android:textColor="#858585"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recycleCartProducts" />
+
+    <TextView
+        android:id="@+id/textCarrinhoSubtotal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="24dp"
+        android:text="R$ 853.00"
+        android:textAlignment="viewEnd"
+        android:textColor="#11852A"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/labelSacolaSubtotal"
+        app:layout_constraintTop_toBottomOf="@+id/recycleCartProducts" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

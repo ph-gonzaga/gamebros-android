@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/home"
+    android:fillViewport="true"
+    android:textColor="#055EA5"
+    android:textSize="16sp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".checkout.AddressCheckoutFragment">
+
+        <TextView
+            android:id="@+id/tituloEnderecoEntrega"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Entrega"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/viewDetalheProduto"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/circular_item"
+            android:backgroundTint="@color/home"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tituloEnderecoEntrega" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editFieldCEPLayout"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:hint="CEP"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="#4CAF50"
+            app:hintTextColor="#16A81C"
+            app:layout_constraintEnd_toEndOf="@+id/viewDetalheProduto"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/viewDetalheProduto"
+            app:layout_constraintTop_toTopOf="@+id/viewDetalheProduto">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editFieldCEP"
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
+                android:background="@color/home"
+                android:inputType="number"
+                android:textColor="#06700A"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageButton
+            android:id="@+id/btnBuscarCep"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded"
+            android:backgroundTint="#BF90F8AD"
+            android:src="@drawable/ic_baseline_search_24"
+            app:layout_constraintEnd_toEndOf="@+id/viewDetalheProduto"
+            app:layout_constraintStart_toEndOf="@+id/editFieldCEPLayout"
+            app:layout_constraintTop_toTopOf="@+id/viewDetalheProduto"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <View
+            android:id="@+id/view7"
+            android:layout_width="0dp"
+            android:layout_height="380dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewDetalheProduto" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editFieldEnderecoLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Endereço"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="#4CAF50"
+            app:hintTextColor="#16A81C"
+            app:layout_constraintEnd_toEndOf="@+id/view7"
+            app:layout_constraintStart_toStartOf="@+id/view7"
+            app:layout_constraintTop_toTopOf="@+id/view7">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editFieldEndereco"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#EAFDF1"
+                android:enabled="false"
+                android:textColor="#000000" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editFieldNumeroLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Numero"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="#4CAF50"
+            app:hintTextColor="#16A81C"
+            app:layout_constraintEnd_toEndOf="@+id/view7"
+            app:layout_constraintStart_toStartOf="@+id/view7"
+            app:layout_constraintTop_toBottomOf="@+id/editFieldEnderecoLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editFieldNumero"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/home"
+                android:inputType="number"
+                android:textColor="#000000" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editFieldComplementoLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Complemento"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="#4CAF50"
+            app:hintTextColor="#16A81C"
+            app:layout_constraintEnd_toEndOf="@+id/view7"
+            app:layout_constraintStart_toStartOf="@+id/view7"
+            app:layout_constraintTop_toBottomOf="@+id/editFieldNumeroLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editFieldComplemento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/home"
+                android:textColor="#020202" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editFieldCidadeLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Cidade"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="#4CAF50"
+            app:hintTextColor="#16A81C"
+            app:layout_constraintEnd_toEndOf="@+id/view7"
+            app:layout_constraintStart_toStartOf="@+id/view7"
+            app:layout_constraintTop_toBottomOf="@+id/editFieldComplementoLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editFieldCidade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#EAFDF1"
+                android:enabled="false"
+                android:textColor="#000000" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editFieldUFLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="UF"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="#4CAF50"
+            app:hintTextColor="#16A81C"
+            app:layout_constraintEnd_toEndOf="@+id/view7"
+            app:layout_constraintStart_toStartOf="@+id/view7"
+            app:layout_constraintTop_toBottomOf="@+id/editFieldCidadeLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editFieldUF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#EAFDF1"
+                android:enabled="false"
+                android:textColor="#000000" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/btnFinalizarCompra"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/rounded"
+            android:text="Finalizar"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="#BF27B54F"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textEntregaTotal"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/labelEntregaSubtotal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="14dp"
+            android:text="Subtotal"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view7" />
+
+        <TextView
+            android:id="@+id/labelEntregaFrete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:text="Frete"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/labelEntregaSubtotal" />
+
+        <TextView
+            android:id="@+id/labelEntregaTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:text="Total"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/labelEntregaFrete" />
+
+        <TextView
+            android:id="@+id/textEntregaSubtotal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="32dp"
+            android:text="R$ 816.00"
+            android:textAlignment="textEnd"
+            android:textColor="#838383"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/labelEntregaSubtotal"
+            app:layout_constraintTop_toBottomOf="@+id/view7" />
+
+        <TextView
+            android:id="@+id/textEntregaFrete"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:text="R$ 15.00"
+            android:textAlignment="textEnd"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toEndOf="@+id/labelEntregaFrete"
+            app:layout_constraintTop_toBottomOf="@+id/textEntregaSubtotal" />
+
+        <TextView
+            android:id="@+id/textEntregaTotal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:text="R$ 831.00"
+            android:textAlignment="textEnd"
+            android:textColor="#11852A"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/labelEntregaTotal"
+            app:layout_constraintTop_toBottomOf="@+id/textEntregaFrete" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

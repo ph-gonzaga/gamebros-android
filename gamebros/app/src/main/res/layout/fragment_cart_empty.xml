@@ -16,8 +16,9 @@
             android:id="@+id/textSacolaTituloVazio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="Minha sacola"
+            android:layout_marginTop="68dp"
+            android:text="Sua sacola está vazia!"
+            android:textColor="#2C752F"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -26,16 +27,14 @@
 
         <Button
             android:id="@+id/btnPesquisarProduto"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="24dp"
             android:background="@drawable/rounded"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:text="Pesquisar produtos"
+            android:text="Pesquisar Produtos"
             android:textColor="#393939"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -44,7 +43,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView6"
-            app:layout_constraintVertical_bias="0.16000003" />
+            app:layout_constraintVertical_bias="0.17000002" />
 
         <View
             android:id="@+id/viewDetalheProduto"
@@ -71,32 +70,18 @@
             app:layout_constraintTop_toTopOf="@+id/viewDetalheProduto" />
 
         <TextView
-            android:id="@+id/textView2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="24dp"
-            android:text="Sua sacola está vazia!"
-            android:textAlignment="center"
-            android:textColor="#2C752F"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/viewDetalheProduto" />
-
-        <TextView
             android:id="@+id/textView6"
             android:layout_width="363dp"
             android:layout_height="67dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
             android:text='Para inserir produtos em sua sacola, basta pesquisar o produto pelo nome ou buscar pelo menu de categorias, e ao encontrar o item desejado, clique no botão "Comprar"'
             android:textAlignment="center"
+            android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintTop_toBottomOf="@+id/viewDetalheProduto" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
