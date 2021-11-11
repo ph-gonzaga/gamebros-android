@@ -5,56 +5,77 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import br.senac.gamebros.R
+import br.senac.gamebros.adapter.AdapterOrder
+import br.senac.gamebros.adapter.AdapterProduct
+import br.senac.gamebros.databinding.FragmentListOrdersBinding
+import br.senac.gamebros.model.Order
+import br.senac.gamebros.model.Product
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [OrderListFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class OrderListFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    lateinit var binding: FragmentListOrdersBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        binding = FragmentListOrdersBinding.inflate(inflater)
+
+        val recycleViewOrder = binding.recycleListOrders
+        recycleViewOrder.layoutManager = LinearLayoutManager(context)
+        recycleViewOrder .setHasFixedSize(true)
+
+        //Configura o adapter
+        val listaPedidos: MutableList<Order> = mutableListOf()
+        val adapterPedidos = AdapterOrder(listaPedidos)
+        recycleViewOrder.adapter = adapterPedidos
+
+        var order1 = Order(
+            "10112021-1",
+            "10/11/2021",
+            "Entregue"
+        )
+
+        listaPedidos.add(order1)
+
+        var order2 = Order(
+            "10112021-1",
+            "10/11/2021",
+            "Entregue"
+        )
+
+        listaPedidos.add(order2)
+
+        var order3 = Order(
+            "10112021-1",
+            "10/11/2021",
+            "Entregue"
+        )
+
+        listaPedidos.add(order3)
+
+//        var order4 = Order(
+//            "10112021-1",
+//            "10/11/2021",
+//            "Entregue"
+//        )
+//
+//        listaPedidos.add(order4)
+//
+//        var order5 = Order(
+//            "10112021-1",
+//            "10/11/2021",
+//            "Entregue"
+//        )
+//
+//        listaPedidos.add(order5)
+
+        return binding.root
+
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_order_list, container, false)
-    }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment OrderListFragment.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            OrderListFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        fun newInstance() = OrderListFragment()
     }
 }

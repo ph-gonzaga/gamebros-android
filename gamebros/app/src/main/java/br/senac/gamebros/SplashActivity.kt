@@ -19,7 +19,7 @@ class SplashActivity : AppCompatActivity() {
             val intent: android.content.Intent = Intent(this, BottomNavigationActivity::class.java)
             startActivity(intent)
             finish()
-        }, 4000)
+        }, 3000)
 
     }
 }

@@ -9,6 +9,7 @@ import br.senac.gamebros.R
 import br.senac.gamebros.account.AccountFragment
 import br.senac.gamebros.account.AddressFragment
 import br.senac.gamebros.account.SignupFragment
+import br.senac.gamebros.cart.CartFragment
 import br.senac.gamebros.databinding.FragmentAccountBinding
 import br.senac.gamebros.databinding.FragmentProductBinding
 
@@ -22,8 +23,8 @@ class ProductFragment : Fragment() {
         binding.btnComprarItem.setOnClickListener {
             container?.let {
                 parentFragmentManager.beginTransaction().replace(it.id,
-                    SignupFragment.newInstance()
-                ).addToBackStack("fragAccount").commit()
+                    CartFragment.newInstance()
+                ).addToBackStack("fragProduct").commit()
             }
         }
 
