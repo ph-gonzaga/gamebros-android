@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import br.senac.gamebros.api.ViaCepAPI
 import br.senac.gamebros.databinding.FragmentAddressBinding
 import br.senac.gamebros.model.ViaCep
 import br.senac.gamebros.services.ViaCepService
@@ -39,14 +40,6 @@ class AddressFragment : Fragment() {
     }
 
     fun buscarEndereco(cep: String) {
-        val retrofit = Retrofit
-            .Builder()
-            .baseUrl("https://viacep.com.br/ws/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-
-        val service = retrofit.create(ViaCepService::class.java)
-        val call = service.getCep(cep)
         val callback = object : Callback<ViaCep> {
             override fun onResponse(call: Call<ViaCep>, response: Response<ViaCep>) {
                 if(response.isSuccessful) {
@@ -75,7 +68,7 @@ class AddressFragment : Fragment() {
             }
         }
 
-        call.enqueue(callback)
+        ViaCepAPI.cep.getCep(cep).enqueue(callback)
     }
 
     companion object {
