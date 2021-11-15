@@ -1,4 +1,4 @@
-package br.senac.gamebros.login
+package br.senac.gamebros.views.login
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

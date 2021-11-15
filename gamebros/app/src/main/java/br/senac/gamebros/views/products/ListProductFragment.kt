@@ -1,4 +1,4 @@
-package br.senac.gamebros.products
+package br.senac.gamebros.views.products
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.senac.gamebros.R
-import br.senac.gamebros.adapter.AdapterProduct
+import br.senac.gamebros.views.adapter.AdapterProduct
 import br.senac.gamebros.databinding.FragmentListProductBinding
 import br.senac.gamebros.model.Product
 

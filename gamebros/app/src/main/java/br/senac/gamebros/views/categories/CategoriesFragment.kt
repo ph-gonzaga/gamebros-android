@@ -1,13 +1,12 @@
-package br.senac.gamebros.categories
+package br.senac.gamebros.views.categories
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import br.senac.gamebros.R
 import br.senac.gamebros.databinding.FragmentCategoriesBinding
-import br.senac.gamebros.products.ProductFragment
+import br.senac.gamebros.views.products.ProductFragment
 
 class CategoriesFragment : Fragment() {
 

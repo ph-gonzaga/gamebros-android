@@ -3,7 +3,7 @@ package br.senac.gamebros
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import br.senac.gamebros.adapter.AdapterProduct
+import br.senac.gamebros.views.adapter.AdapterProduct
 import br.senac.gamebros.databinding.ActivityListProductBinding
 
 import br.senac.gamebros.model.Product

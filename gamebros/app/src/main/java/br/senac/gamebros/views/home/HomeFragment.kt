@@ -1,4 +1,4 @@
-package br.senac.gamebros.home
+package br.senac.gamebros.views.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

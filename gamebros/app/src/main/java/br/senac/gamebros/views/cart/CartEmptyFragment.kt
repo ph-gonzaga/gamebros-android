@@ -1,12 +1,11 @@
-package br.senac.gamebros.cart
+package br.senac.gamebros.views.cart
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import br.senac.gamebros.R
-import br.senac.gamebros.categories.CategoriesFragment
+import br.senac.gamebros.views.categories.CategoriesFragment
 import br.senac.gamebros.databinding.FragmentCartEmptyBinding
 
 class CartEmptyFragment : Fragment() {

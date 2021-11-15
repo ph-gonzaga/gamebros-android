@@ -1,4 +1,4 @@
-package br.senac.gamebros.account
+package br.senac.gamebros.views.account
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,12 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import br.senac.gamebros.BottomNavigationActivity
-import br.senac.gamebros.cart.CartFragment
-import br.senac.gamebros.checkout.AddressCheckoutFragment
 import br.senac.gamebros.databinding.FragmentAccountBinding
-import br.senac.gamebros.login.LoginActivity
-import br.senac.gamebros.orders.OrderListFragment
+import br.senac.gamebros.views.login.LoginActivity
+import br.senac.gamebros.views.orders.OrderListFragment
 
 class AccountFragment : Fragment() {
 

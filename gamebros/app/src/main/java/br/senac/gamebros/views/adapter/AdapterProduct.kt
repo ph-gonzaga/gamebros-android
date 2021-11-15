@@ -1,6 +1,5 @@
-package br.senac.gamebros.adapter
+package br.senac.gamebros.views.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +8,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.senac.gamebros.R
 import br.senac.gamebros.model.Product
-import br.senac.gamebros.products.ListProductFragment
 
 class AdapterProduct(private val produtos: MutableList<Product>): RecyclerView.Adapter<AdapterProduct.ProductViewHolder>() {
 
