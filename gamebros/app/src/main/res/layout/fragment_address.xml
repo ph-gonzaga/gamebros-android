@@ -11,6 +11,7 @@
     android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:context=".account.AccountFragment">
@@ -61,6 +62,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/home"
                 android:inputType="number"
+                android:maxLength="8"
                 android:textColor="#055EA5"
                 android:textSize="16sp"
                 android:textStyle="bold" />
