@@ -5,6 +5,14 @@
       <map>
         <entry key="..\:/Dev/AndroidStudioProjects/GameBros/gamebros/app/src/main/res/layout/fragment_account.xml" value="0.2833333333333333" />
         <entry key="..\:/Dev/AndroidStudioProjects/GameBros/gamebros/app/src/main/res/layout/fragment_address.xml" value="0.2833333333333333" />
+        <entry key="..\:/Dev/AndroidStudioProjects/GameBros/gamebros/app/src/main/res/layout/fragment_categories.xml" value="0.25" />
+        <entry key="..\:/Dev/AndroidStudioProjects/GameBros/gamebros/app/src/main/res/layout/fragment_list_product.xml" value="0.2962962962962963" />
+        <entry key="..\:/Dev/Projects/AndroidStudioProjects/GameBros/gamebros/app/src/main/res/layout/activity_bottom_navigation.xml" value="0.20052083333333334" />
+        <entry key="..\:/Dev/Projects/AndroidStudioProjects/GameBros/gamebros/app/src/main/res/layout/activity_list_product.xml" value="0.20052083333333334" />
+        <entry key="..\:/Dev/Projects/AndroidStudioProjects/GameBros/gamebros/app/src/main/res/layout/activity_login.xml" value="0.20052083333333334" />
+        <entry key="..\:/Dev/Projects/AndroidStudioProjects/GameBros/gamebros/app/src/main/res/layout/activity_splash.xml" value="0.20052083333333334" />
+        <entry key="..\:/Dev/Projects/AndroidStudioProjects/GameBros/gamebros/app/src/main/res/layout/fragment_list_product.xml" value="0.1" />
+        <entry key="..\:/Dev/Projects/AndroidStudioProjects/GameBros/gamebros/app/src/main/res/layout/item_product.xml" value="0.2" />
         <entry key="app/src/main/res/drawable/btn_custom.xml" value="0.20572916666666666" />
         <entry key="app/src/main/res/drawable/circular_item.xml" value="0.2625" />
         <entry key="app/src/main/res/drawable/item_selector.xml" value="0.20572916666666666" />

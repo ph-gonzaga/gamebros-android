@@ -1,4 +1,4 @@
-package br.senac.gamebros.views.adapter
+package br.senac.gamebros.adapter
 
 import android.view.LayoutInflater
 import android.view.View

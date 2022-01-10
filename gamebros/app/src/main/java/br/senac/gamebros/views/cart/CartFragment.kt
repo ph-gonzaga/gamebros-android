@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.senac.gamebros.R
-import br.senac.gamebros.views.adapter.AdapterCart
+import br.senac.gamebros.adapter.AdapterCart
 import br.senac.gamebros.views.checkout.AddressCheckoutFragment
 import br.senac.gamebros.databinding.FragmentCartBinding
 import br.senac.gamebros.model.Cart
