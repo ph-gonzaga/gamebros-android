@@ -1,4 +1,4 @@
-package br.senac.gamebros.login
+package br.senac.gamebros.views.login
 
 import android.content.Intent
 import android.os.Bundle

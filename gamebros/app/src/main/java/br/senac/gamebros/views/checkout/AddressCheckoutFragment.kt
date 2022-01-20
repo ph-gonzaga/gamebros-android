@@ -1,15 +1,11 @@
-package br.senac.gamebros.checkout
+package br.senac.gamebros.views.checkout
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import br.senac.gamebros.R
-import br.senac.gamebros.cart.CartEmptyFragment
-import br.senac.gamebros.categories.CategoriesFragment
 import br.senac.gamebros.databinding.FragmentAddressCheckoutBinding
-import br.senac.gamebros.databinding.FragmentCartEmptyBinding
 
 class AddressCheckoutFragment : Fragment() {
 

@@ -1,4 +1,4 @@
-package br.senac.gamebros.cart
+package br.senac.gamebros.views.cart
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,13 +8,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.senac.gamebros.R
 import br.senac.gamebros.adapter.AdapterCart
-import br.senac.gamebros.adapter.AdapterProduct
-import br.senac.gamebros.checkout.AddressCheckoutFragment
+import br.senac.gamebros.views.checkout.AddressCheckoutFragment
 import br.senac.gamebros.databinding.FragmentCartBinding
-import br.senac.gamebros.databinding.FragmentListProductBinding
 import br.senac.gamebros.model.Cart
-import br.senac.gamebros.model.Product
-import br.senac.gamebros.products.ListProductFragment
 
 class CartFragment : Fragment() {
     lateinit var binding: FragmentCartBinding

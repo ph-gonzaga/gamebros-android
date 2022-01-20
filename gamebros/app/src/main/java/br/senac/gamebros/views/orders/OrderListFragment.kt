@@ -1,4 +1,4 @@
-package br.senac.gamebros.orders
+package br.senac.gamebros.views.orders
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,12 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import br.senac.gamebros.R
 import br.senac.gamebros.adapter.AdapterOrder
-import br.senac.gamebros.adapter.AdapterProduct
 import br.senac.gamebros.databinding.FragmentListOrdersBinding
 import br.senac.gamebros.model.Order
-import br.senac.gamebros.model.Product
 
 
 class OrderListFragment : Fragment() {

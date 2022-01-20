@@ -1,6 +1,5 @@
 package br.senac.gamebros.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,34 +8,42 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.senac.gamebros.R
 import br.senac.gamebros.model.Product
-import br.senac.gamebros.products.ListProductFragment
+import kotlinx.android.synthetic.main.item_product.view.*
 
-class AdapterProduct(private val produtos: MutableList<Product>): RecyclerView.Adapter<AdapterProduct.ProductViewHolder>() {
+class AdapterProduct(
+    private val onItemClicked: (Product) -> Unit
+): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
-        // Cria o item da lista
-        val itemLista = LayoutInflater.from(parent?.context).inflate(R.layout.item_product, parent, false)
-        val holder = ProductViewHolder(itemLista)
-        return holder
+    private var produtos: List<Product> = ArrayList()
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        return ProductViewHolder(
+            LayoutInflater.from(parent.context).inflate(R.layout.item_product, parent, false)
+        )
     }
 
-    override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
-        // Exibe o item da lista
-        holder.image.setImageResource(produtos[position].image)
-        holder.categoria.text = produtos[position].categoria
-        holder.subcategoria.text = produtos[position].subcategoria
-        holder.nome.text = produtos[position].nome
-        holder.preco.text = produtos[position].preco
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        when(holder) {
+            is ProductViewHolder -> {
+                holder.bind(produtos[position], onItemClicked)
+            }
+        }
+    }
+
+    fun setList(productList: ArrayList<Product>) {
+        this.produtos = productList
+        notifyDataSetChanged()
     }
 
     override fun getItemCount(): Int = produtos.size
 
+    class ProductViewHolder constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val productName = itemView.textNomeProduto
+        private val productPrice = itemView.textPrecoProduto
 
-    inner class ProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val image = itemView.findViewById<ImageView>(R.id.imageProduto)
-        val categoria = itemView.findViewById<TextView>(R.id.textCategoriaProduto)
-        val subcategoria = itemView.findViewById<TextView>(R.id.textSubCategoriaProduto)
-        val nome = itemView.findViewById<TextView>(R.id.textNomeProduto)
-        val preco = itemView.findViewById<TextView>(R.id.textPrecoProduto)
+        fun bind(produto: Product, onItemClicked: (Product) -> Unit) {
+            productName.text = produto.name
+            productPrice.text = produto.price
+        }
     }
 }

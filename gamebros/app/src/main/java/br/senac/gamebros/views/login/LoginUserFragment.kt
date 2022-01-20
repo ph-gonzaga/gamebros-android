@@ -1,4 +1,4 @@
-package br.senac.gamebros.login
+package br.senac.gamebros.views.login
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

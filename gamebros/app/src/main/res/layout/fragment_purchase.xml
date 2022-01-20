@@ -12,7 +12,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".checkout.PurchaseFragment">
+        tools:context=".views.checkout.PurchaseFragment">
 
         <TextView
             android:id="@+id/textCompraTitulo"

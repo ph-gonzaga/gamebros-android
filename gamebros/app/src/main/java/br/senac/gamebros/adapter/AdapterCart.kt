@@ -9,7 +9,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.senac.gamebros.R
 import br.senac.gamebros.model.Cart
-import br.senac.gamebros.model.Order
 
 class AdapterCart(private val cart: MutableList<Cart>): RecyclerView.Adapter<AdapterCart.CartViewHolder>() {
 
