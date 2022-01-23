@@ -69,7 +69,7 @@ class ProductFragment : Fragment() {
             override fun onResponse(call: Call<CartResponse>, response: Response<CartResponse>) {
                 if(response.isSuccessful){
                     Log.i("RESPONSE", response.body().toString())
-                    Snackbar.make(binding.container, response.body().toString(), Snackbar.LENGTH_LONG).show()
+                    Snackbar.make(binding.container, "Produto adicionado ao carrinho.", Snackbar.LENGTH_LONG).show()
                 } else{
                     Snackbar.make(
                         binding.container,
