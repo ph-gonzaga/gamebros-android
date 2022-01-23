@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import br.senac.gamebros.views.adapter.AdapterOrder
+import br.senac.gamebros.adapter.AdapterOrder
 import br.senac.gamebros.databinding.FragmentListOrdersBinding
 import br.senac.gamebros.model.Order
 

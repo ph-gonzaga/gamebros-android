@@ -1,87 +1,69 @@
 package br.senac.gamebros.views.products
 
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import br.senac.gamebros.R
-import br.senac.gamebros.views.adapter.AdapterProduct
+import br.senac.gamebros.adapter.ProductAdapter
 import br.senac.gamebros.databinding.FragmentListProductBinding
-import br.senac.gamebros.model.Product
+import br.senac.gamebros.repository.Repository
 
 
 class ListProductFragment : Fragment() {
-
-    lateinit var binding: FragmentListProductBinding
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = FragmentListProductBinding.inflate(inflater)
-
-        val recycleViewProduct = binding.recycleListProducts
-        recycleViewProduct.layoutManager = LinearLayoutManager(context)
-        recycleViewProduct .setHasFixedSize(true)
-
-        //Configura o adapter
-        val listaProdutos: MutableList<Product> = mutableListOf()
-        val adapterProdutos = AdapterProduct(listaProdutos)
-        recycleViewProduct.adapter = adapterProdutos
-
-        var product1 = Product(
-            R.drawable.zelda_switch,
-            "Nintendo Switch",
-            "Jogos",
-            "Zelda: Breath of the Wild",
-            "R\$ 330,00"
-        )
-
-        listaProdutos.add(product1)
-
-        var product2 = Product(
-            R.drawable.mario_party_switch,
-            "Nintendo Switch",
-            "Jogos",
-            "Mario Party",
-            "R\$ 320,00"
-        )
-
-        listaProdutos.add(product2)
-
-        var product3 = Product(
-            R.drawable.pokemon_snap_switch,
-            "Nintendo Switch",
-            "Jogos",
-            "Pokemon Snap",
-            "R\$ 320,00"
-        )
-
-        listaProdutos.add(product3)
-
-        var product4 = Product(
-            R.drawable.smash_switch,
-            "Nintendo Switch",
-            "Jogos",
-            "Super Smash Bros Ultimate Fighters",
-            "R\$ 300,00"
-        )
-
-        listaProdutos.add(product4)
-
-        var product5 = Product(
-            R.drawable.kirby_switch,
-            "Nintendo Switch",
-            "Jogos",
-            "Kirby Star Allies",
-            "R\$ 315,00"
-        )
-
-        listaProdutos.add(product5)
-
-        return binding.root
-
+    private var _binding: FragmentListProductBinding? = null
+    private val binding get() = _binding!!
+    private val listProductViewModel: ListProductViewModel by activityViewModels {
+        ListProductViewModelFactory(Repository())
+    }
+    private var adapter = ProductAdapter {
+        Log.e("Recebido", it.id.toString())
     }
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        listProductViewModel.listarProdutos()
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+       _binding = FragmentListProductBinding.inflate(inflater, container, false)
+
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        listProductViewModel.myResponse.observe(viewLifecycleOwner, { response ->
+            if(response.isSuccessful){
+                adapter.setProducts(response.body()!!)
+                Log.d("Result", response.body()!!.toString())
+            } else {
+                Log.d("ResultError", response.code().toString())
+            }
+        })
+
+        binding.apply {
+            recycleListProducts.layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
+            recycleListProducts.adapter = adapter
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 
     companion object {
         @JvmStatic
