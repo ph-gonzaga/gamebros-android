@@ -12,7 +12,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".views.account.AccountFragment">
+        tools:context=".views.account.AccountFragment"
+        android:id="@id/container">
 
         <TextView
             android:id="@+id/textSacolaTituloVazio"
@@ -67,7 +68,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:src="@drawable/mario_party_switch"
+            android:src="@drawable/produto_default"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -80,7 +81,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:text="Super Mario Bros.U Deluxe"
+            android:text="[Nome do Produto]"
             android:textAlignment="center"
             android:textColor="#170085"
             android:textSize="20sp"
@@ -108,7 +109,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="32dp"
-            android:text="R$299.00 "
+            android:text="[R$ 0.00]"
             android:textColor="#E91E63"
             android:textSize="34sp"
             android:textStyle="bold"
@@ -173,7 +174,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:text="Junte-se ao Mario, Luigi e amigos nesta diversão para jogador único ou multijogador a qualquer hora, em qualquer lugar!"
+            android:text="[Descriçao do produto]"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="@+id/viewDetalhesText"
             app:layout_constraintStart_toStartOf="@+id/viewDetalhesText"
@@ -207,7 +208,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
-            android:text="Caracteristicas"
+            android:text="Características"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/viewDetalhesText"

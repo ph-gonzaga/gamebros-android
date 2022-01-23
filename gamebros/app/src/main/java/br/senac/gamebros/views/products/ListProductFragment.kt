@@ -11,6 +11,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import br.senac.gamebros.R
 import br.senac.gamebros.adapter.ProductAdapter
 import br.senac.gamebros.databinding.FragmentListProductBinding
 import br.senac.gamebros.repository.Repository
@@ -22,7 +23,9 @@ class ListProductFragment : Fragment() {
     private val listProductViewModel: ListProductViewModel by activityViewModels {
         ListProductViewModelFactory(Repository())
     }
-    private var adapter = ProductAdapter()
+    private var adapter = ProductAdapter {
+        Log.e("Recebido", it.id.toString())
+    }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
