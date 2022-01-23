@@ -13,6 +13,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import br.senac.gamebros.R
+import br.senac.gamebros.utils.Constants.Companion.RAW_URL
 import com.google.android.material.internal.ContextUtils.getActivity
 import kotlinx.android.synthetic.main.fragment_address.view.*
 import kotlinx.android.synthetic.main.fragment_address.view.container
@@ -29,7 +30,7 @@ class ProductAdapter(val listener: (Product) -> Unit) : RecyclerView.Adapter<Pro
             binding.textNomeProduto.text = product.name
             binding.textPrecoProduto.text = "R$" + product.price
 
-            Picasso.get().load(product.image).into(binding.imageProduto)
+            Picasso.get().load(RAW_URL + product.image).into(binding.imageProduto)
         }
     }
 
