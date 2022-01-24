@@ -1,22 +1,31 @@
 package br.senac.gamebros.views.cart
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.senac.gamebros.R
-import br.senac.gamebros.adapter.AdapterCart
+import br.senac.gamebros.adapter.CartAdapter
 import br.senac.gamebros.views.checkout.AddressCheckoutFragment
 import br.senac.gamebros.databinding.FragmentCartBinding
 import br.senac.gamebros.model.Cart
+import br.senac.gamebros.model.CartProductsResponse
 
 class CartFragment : Fragment() {
     lateinit var binding: FragmentCartBinding
 
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentCartBinding.inflate(inflater)
+
+        val bundle = arguments
+        val data = bundle?.getSerializable("data")
+        data?.let {
+            Log.i("Bundle data card", it.toString())
+        }
 
         val recycleViewCart = binding.recyclerCartProducts
         recycleViewCart.layoutManager = LinearLayoutManager(context)
@@ -25,11 +34,11 @@ class CartFragment : Fragment() {
         //Configura o adapter
 
         val listaItensSacola: MutableList<Cart> = mutableListOf()
-        val adapterCart = AdapterCart(listaItensSacola)
+        val adapterCart = CartAdapter(listaItensSacola)
         recycleViewCart.adapter = adapterCart
 
         var itemSacola = Cart(
-            R.drawable.mario_party_switch,
+            R.drawable.produto_default,
             "Nintendo Switch",
             "Jogos",
             "Super Mario Bros.U Deluxe",

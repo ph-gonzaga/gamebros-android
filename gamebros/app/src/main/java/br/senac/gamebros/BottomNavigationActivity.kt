@@ -78,7 +78,15 @@ class BottomNavigationActivity : AppCompatActivity() {
                     val listaProdutos = response.body()
 
                     if(listaProdutos?.size!! > 0){
-                        replaceFragment(CartFragment())
+                        val bundle = Bundle()
+                        val list = ArrayList<CartProductsResponse>(listaProdutos)
+
+                        bundle.putSerializable("data", list)
+
+                        val fragment = CartFragment()
+                        fragment.arguments = bundle
+
+                        replaceFragment(fragment)
                     }
 
                     Log.i("Listagem de produtos - cart", listaProdutos.toString())

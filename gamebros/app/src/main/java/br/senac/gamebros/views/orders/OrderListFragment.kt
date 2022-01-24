@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import br.senac.gamebros.adapter.AdapterOrder
+import br.senac.gamebros.adapter.OrderAdapter
 import br.senac.gamebros.databinding.FragmentListOrdersBinding
 import br.senac.gamebros.model.Order
 
@@ -23,7 +23,7 @@ class OrderListFragment : Fragment() {
 
         //Configura o adapter
         val listaPedidos: MutableList<Order> = mutableListOf()
-        val adapterPedidos = AdapterOrder(listaPedidos)
+        val adapterPedidos = OrderAdapter(listaPedidos)
         recycleViewOrder.adapter = adapterPedidos
 
         var order1 = Order(

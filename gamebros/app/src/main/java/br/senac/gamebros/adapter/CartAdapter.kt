@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import br.senac.gamebros.R
 import br.senac.gamebros.model.Cart
 
-class AdapterCart(private val cart: MutableList<Cart>): RecyclerView.Adapter<AdapterCart.CartViewHolder>() {
+class CartAdapter(private val cart: MutableList<Cart>): RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartViewHolder {
         // Cria o item da lista
