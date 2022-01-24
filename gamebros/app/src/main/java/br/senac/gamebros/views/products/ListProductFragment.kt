@@ -55,8 +55,8 @@ class ListProductFragment : Fragment() {
         })
 
         binding.apply {
-            recycleListProducts.layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
-            recycleListProducts.adapter = adapter
+            recyclerListProducts.layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
+            recyclerListProducts.adapter = adapter
         }
     }
 

@@ -2,7 +2,9 @@ package br.senac.gamebros.model
 
 data class Product(
     val image: String,
-    val categoryId: Int,
+    val category_id: Int,
+    val category_name: String,
+    val subCategory: String,
     val price: String,
     val name: String,
     val description: String,

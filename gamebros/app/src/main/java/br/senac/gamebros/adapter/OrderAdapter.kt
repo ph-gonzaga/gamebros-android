@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import br.senac.gamebros.R
 import br.senac.gamebros.model.Order
 
-class AdapterOrder(private val order: MutableList<Order>): RecyclerView.Adapter<AdapterOrder.OrderViewHolder>() {
+class OrderAdapter(private val order: MutableList<Order>): RecyclerView.Adapter<OrderAdapter.OrderViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrderViewHolder {
         // Cria o item da lista
