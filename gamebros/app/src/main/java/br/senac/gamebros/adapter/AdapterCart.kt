@@ -31,7 +31,6 @@ class AdapterCart(private val cart: MutableList<Cart>): RecyclerView.Adapter<Ada
 
     override fun getItemCount(): Int = cart.size
 
-
     inner class CartViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val image = itemView.findViewById<ImageView>(R.id.imageProduto)
         val categoria = itemView.findViewById<TextView>(R.id.textCategoriaProduto)
