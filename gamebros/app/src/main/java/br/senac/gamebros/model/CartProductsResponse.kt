@@ -14,6 +14,8 @@ data class CartProductsResponse(
     val cartProductId: Int,
     @SerializedName("category_id")
     val categoryId: Int,
+    @SerializedName("category_name")
+    val categoryName: String,
     @SerializedName("description")
     val description: String,
     @SerializedName("discount")

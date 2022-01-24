@@ -9,8 +9,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.senac.gamebros.R
 import br.senac.gamebros.model.Cart
+import br.senac.gamebros.model.CartProductsResponse
+import br.senac.gamebros.utils.Constants
+import com.google.android.material.snackbar.Snackbar
+import com.squareup.picasso.Picasso
 
-class CartAdapter(private val cart: MutableList<Cart>): RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
+class CartAdapter(private val cart: ArrayList<CartProductsResponse>): RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartViewHolder {
         // Cria o item da lista
@@ -21,12 +25,19 @@ class CartAdapter(private val cart: MutableList<Cart>): RecyclerView.Adapter<Car
 
     override fun onBindViewHolder(holder: CartViewHolder, position: Int) {
         // Exibe o item da lista
-        holder.image.setImageResource(cart[position].image)
-        holder.categoria.text = cart[position].categoria
-        holder.subcategoria.text = cart[position].subcategoria
-        holder.nome.text = cart[position].nome
-        holder.preco.text = cart[position].preco
-        holder.lixeira
+        Picasso.get().load(Constants.RAW_URL + cart[position].image).into(holder.image)
+        holder.categoria.text = cart[position].categoryName
+        holder.subcategoria.text = cart[position].subCategory
+        holder.nome.text = cart[position].name
+        holder.preco.text = "R$" + cart[position].price
+
+        // removendo produto do carrinho
+        holder.lixeira.setOnClickListener {
+            Snackbar.make(
+                holder.itemView,
+                "Clicado",
+                Snackbar.LENGTH_LONG).show()
+        }
     }
 
     override fun getItemCount(): Int = cart.size

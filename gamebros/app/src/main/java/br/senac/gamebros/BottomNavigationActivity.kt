@@ -5,6 +5,7 @@ import br.senac.gamebros.databinding.ActivityBottomNavigationBinding
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
+import br.senac.gamebros.model.Cart
 import br.senac.gamebros.model.CartProductsResponse
 import br.senac.gamebros.model.Product
 import br.senac.gamebros.services.CartsService
@@ -43,7 +44,6 @@ class BottomNavigationActivity : AppCompatActivity() {
         replaceFragment(home)
 
         binding.bottomNavigation.setOnItemSelectedListener {
-
             when (it.itemId) {
                 R.id.home -> replaceFragment(home)
                 R.id.categorias -> replaceFragment(categorias)
@@ -53,8 +53,7 @@ class BottomNavigationActivity : AppCompatActivity() {
             }
 
             true
-
-            }
+        }
     }
 
     private fun replaceFragment(fragment: Fragment){
@@ -72,16 +71,17 @@ class BottomNavigationActivity : AppCompatActivity() {
         //user_id
         val call = service.listarProdutosCarrinho(1)
 
-        val callback = object : Callback<List<CartProductsResponse>> {
-            override fun onResponse(call: Call<List<CartProductsResponse>>, response: Response<List<CartProductsResponse>>) {
+        val callback = object : Callback<Cart> {
+            override fun onResponse(call: Call<Cart>, response: Response<Cart>) {
                 if(response.isSuccessful){
                     val listaProdutos = response.body()
 
-                    if(listaProdutos?.size!! > 0){
+                    if(listaProdutos?.produtos?.size!! > 0){
                         val bundle = Bundle()
-                        val list = ArrayList<CartProductsResponse>(listaProdutos)
+                        val list = ArrayList<CartProductsResponse>(listaProdutos?.produtos)
 
                         bundle.putSerializable("data", list)
+                        bundle.putFloat("totalCart", listaProdutos?.totalCarrinho)
 
                         val fragment = CartFragment()
                         fragment.arguments = bundle
@@ -101,7 +101,7 @@ class BottomNavigationActivity : AppCompatActivity() {
                 }
             }
 
-            override fun onFailure(call: Call<List<CartProductsResponse>>, t: Throwable) {
+            override fun onFailure(call: Call<Cart>, t: Throwable) {
                 Snackbar.make(
                     binding.container,
                     "Não é possível se conectar ao servidor",

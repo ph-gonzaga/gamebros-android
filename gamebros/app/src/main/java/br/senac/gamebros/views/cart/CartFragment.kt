@@ -22,7 +22,8 @@ class CartFragment : Fragment() {
         binding = FragmentCartBinding.inflate(inflater)
 
         val bundle = arguments
-        val data = bundle?.getSerializable("data")
+        val totalCart = bundle?.getFloat("totalCart")
+        val data = bundle?.getSerializable("data") as ArrayList<CartProductsResponse>
         data?.let {
             Log.i("Bundle data card", it.toString())
         }
@@ -32,20 +33,14 @@ class CartFragment : Fragment() {
         recycleViewCart.setHasFixedSize(true)
 
         //Configura o adapter
-
-        val listaItensSacola: MutableList<Cart> = mutableListOf()
-        val adapterCart = CartAdapter(listaItensSacola)
+        val listaItensSacola = ArrayList<CartProductsResponse>()
+        val adapterCart = CartAdapter(data)
         recycleViewCart.adapter = adapterCart
 
-        var itemSacola = Cart(
-            R.drawable.produto_default,
-            "Nintendo Switch",
-            "Jogos",
-            "Super Mario Bros.U Deluxe",
-            "R\$ 330,00"
-        )
+        listaItensSacola.add(data[0])
 
-        listaItensSacola.add(itemSacola)
+
+
 
         binding.btnCheckoutEndereco.setOnClickListener {
             container?.let {
