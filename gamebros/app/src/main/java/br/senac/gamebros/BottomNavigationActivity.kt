@@ -24,7 +24,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class BottomNavigationActivity : AppCompatActivity() {
-
     lateinit var binding: ActivityBottomNavigationBinding
 
     val retrofit = Retrofit.Builder()
@@ -75,8 +74,8 @@ class BottomNavigationActivity : AppCompatActivity() {
             override fun onResponse(call: Call<Cart>, response: Response<Cart>) {
                 if(response.isSuccessful){
                     val listaProdutos = response.body()
-
-                    if(listaProdutos?.produtos?.size!! > 0){
+                    Log.i("Total", listaProdutos?.totalCarrinho?.toInt().toString())
+                    if(listaProdutos?.totalCarrinho?.toInt()!! > 0){
                         val bundle = Bundle()
                         val list = ArrayList<CartProductsResponse>(listaProdutos?.produtos)
 
