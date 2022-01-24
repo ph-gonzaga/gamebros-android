@@ -57,7 +57,6 @@ class ProductFragment : Fragment() {
         }
 
         return binding.root
-
     }
 
     private fun addProduto(data: CartRequest?) {

@@ -26,6 +26,8 @@ class CartFragment : Fragment() {
         val data = bundle?.getSerializable("data") as ArrayList<CartProductsResponse>
         data?.let {
             Log.i("Bundle data card", it.toString())
+            Log.i("Bundle data card", it.size.toString())
+
         }
 
         val recycleViewCart = binding.recyclerCartProducts
@@ -35,12 +37,20 @@ class CartFragment : Fragment() {
         //Configura o adapter
         val listaItensSacola = ArrayList<CartProductsResponse>()
         val adapterCart = CartAdapter(data)
+        adapterCart.getRemoveItemPosition()
         recycleViewCart.adapter = adapterCart
 
-        listaItensSacola.add(data[0])
+        if(data.size == 0){
+            val fragment = CartEmptyFragment()
+            val transaction = activity?.supportFragmentManager?.beginTransaction()
+            transaction?.replace(R.id.container, fragment)
+            transaction?.commit()
+        } else {
+            listaItensSacola.add(data[0])
+        }
 
 
-
+        binding.textCarrinhoSubtotal.text = "R$" + totalCart.toString()
 
         binding.btnCheckoutEndereco.setOnClickListener {
             container?.let {

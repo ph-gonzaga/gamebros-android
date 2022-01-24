@@ -16,4 +16,7 @@ interface CartsService {
 
     @POST("carrinho")
     fun adicionarProdutoCarrinho(@Body request: CartRequest) : Call<CartResponse>
+
+    @POST("carrinho/remover-produto-carrinho")
+    fun removerProdutoCarrinho(@Body request: CartRequest) : Call<CartResponse>
 }
