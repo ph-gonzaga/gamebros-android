@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
 
     <View
-        android:id="@+id/view3"
+        android:id="@+id/cardProduto"
         android:layout_width="0dp"
         android:layout_height="200dp"
         android:layout_marginTop="8dp"
@@ -25,10 +25,10 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/view3"
-        app:layout_constraintStart_toStartOf="@+id/view3"
-        app:layout_constraintTop_toTopOf="@+id/view3"
-        app:srcCompat="@drawable/zelda_switch" />
+        app:layout_constraintBottom_toBottomOf="@+id/cardProduto"
+        app:layout_constraintStart_toStartOf="@+id/cardProduto"
+        app:layout_constraintTop_toTopOf="@+id/cardProduto"
+        app:srcCompat="@drawable/produto_default" />
 
     <TextView
         android:id="@+id/textCategoriaProduto"
@@ -36,11 +36,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Nintendo Switch"
+        android:text="[Categoria]"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imageProduto"
-        app:layout_constraintTop_toTopOf="@+id/view3" />
+        app:layout_constraintTop_toTopOf="@+id/cardProduto" />
 
     <TextView
         android:id="@+id/textSubCategoriaProduto"
@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:text="Jogos"
+        android:text="[Subcategoria]"
         app:layout_constraintStart_toEndOf="@+id/imageProduto"
         app:layout_constraintTop_toBottomOf="@+id/textCategoriaProduto" />
 
@@ -60,11 +60,11 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:maxLines="4"
-        android:text="Zelda: Breath of the Wild"
+        android:text="[Nome produto]"
         android:textColor="#170085"
         android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/view3"
+        app:layout_constraintEnd_toEndOf="@+id/cardProduto"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageProduto"
         app:layout_constraintTop_toBottomOf="@+id/textSubCategoriaProduto" />
@@ -75,7 +75,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="R$299.00 "
+        android:text="R$0.00 "
         android:textColor="#CC9401"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -90,7 +90,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:backgroundTint="@color/white"
-        app:layout_constraintEnd_toEndOf="@+id/view3"
+        app:layout_constraintEnd_toEndOf="@+id/cardProduto"
         app:layout_constraintHorizontal_bias="0.898"
         app:layout_constraintStart_toEndOf="@+id/imageProduto"
         app:layout_constraintTop_toBottomOf="@+id/textNomeProduto"
