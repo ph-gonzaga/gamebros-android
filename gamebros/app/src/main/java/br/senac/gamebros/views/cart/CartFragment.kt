@@ -18,7 +18,7 @@ class CartFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentCartBinding.inflate(inflater)
 
-        val recycleViewCart = binding.recycleCartProducts
+        val recycleViewCart = binding.recyclerCartProducts
         recycleViewCart.layoutManager = LinearLayoutManager(context)
         recycleViewCart.setHasFixedSize(true)
 

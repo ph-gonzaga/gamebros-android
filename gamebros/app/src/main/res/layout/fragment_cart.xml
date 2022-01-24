@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycleCartProducts"
+        android:id="@+id/recyclerCartProducts"
         android:layout_width="380dp"
         android:layout_height="348dp"
         android:layout_marginStart="16dp"
@@ -58,7 +58,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recycleCartProducts" />
+        app:layout_constraintTop_toBottomOf="@+id/recyclerCartProducts" />
 
     <TextView
         android:id="@+id/textCarrinhoSubtotal"
@@ -74,7 +74,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/labelSacolaSubtotal"
-        app:layout_constraintTop_toBottomOf="@+id/recycleCartProducts" />
+        app:layout_constraintTop_toBottomOf="@+id/recyclerCartProducts" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

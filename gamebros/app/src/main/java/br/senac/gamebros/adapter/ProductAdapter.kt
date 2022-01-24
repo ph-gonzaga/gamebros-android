@@ -8,16 +8,10 @@ import br.senac.gamebros.model.Product
 import br.senac.gamebros.views.products.ProductFragment
 import com.squareup.picasso.Picasso
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import br.senac.gamebros.R
 import br.senac.gamebros.utils.Constants.Companion.RAW_URL
-import com.google.android.material.internal.ContextUtils.getActivity
-import kotlinx.android.synthetic.main.fragment_address.view.*
-import kotlinx.android.synthetic.main.fragment_address.view.container
-import kotlinx.android.synthetic.main.fragment_list_product.view.*
 import kotlinx.android.synthetic.main.item_product.view.*
 
 
@@ -44,7 +38,7 @@ class ProductAdapter(val listener: (Product) -> Unit) : RecyclerView.Adapter<Pro
         val position = holder.adapterPosition
         holder.bind(listProducts[position])
 
-        holder.itemView.view3.setOnClickListener (object: View.OnClickListener {
+        holder.itemView.cardProduto.setOnClickListener (object: View.OnClickListener {
             override fun onClick(v: View?) {
                 val bundle = Bundle()
                 bundle.putString("data", listProducts[position].id.toString())
