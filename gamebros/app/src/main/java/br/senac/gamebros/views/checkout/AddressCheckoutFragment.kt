@@ -6,10 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import br.senac.gamebros.api.ViaCepAPI
 import br.senac.gamebros.databinding.FragmentAddressCheckoutBinding
 import br.senac.gamebros.model.CartResponse
 import br.senac.gamebros.model.OrderRequest
 import br.senac.gamebros.model.OrderResponse
+import br.senac.gamebros.model.ViaCep
 import br.senac.gamebros.services.CartsService
 import br.senac.gamebros.services.OrderService
 import br.senac.gamebros.utils.Constants
@@ -55,7 +57,51 @@ class AddressCheckoutFragment : Fragment() {
             criarPedido(request, container)
         }
 
+        binding.btnBuscarCep.setOnClickListener {
+            val cep = binding.editFieldCEP
+
+            if(cep.length() != 8){
+                Snackbar.make(binding.view7, "CEP Inválido", Snackbar.LENGTH_LONG).show()
+            } else {
+                buscarCep(cep.text.toString())
+            }
+        }
+
         return binding.root
+    }
+
+    private fun buscarCep(cep: String?) {
+        val callback = object : Callback<ViaCep> {
+            override fun onResponse(call: Call<ViaCep>, response: Response<ViaCep>) {
+                if(response.isSuccessful) {
+                    val dadosEndereco = response.body()
+
+                    Log.println(Log.INFO, "INFO", dadosEndereco.toString())
+
+                    binding.editFieldEndereco.setText(dadosEndereco?.logradouro)
+                    binding.editFieldCidade.setText(dadosEndereco?.localidade)
+                    binding.editFieldUF.setText(dadosEndereco?.uf)
+
+                } else {
+                    // val error = response.errorBody().toString()
+                    Snackbar.make(binding.view7, "Não é possível encontrar o CEP informado.",
+                        Snackbar.LENGTH_LONG).show()
+
+                    Log.e("ERROR", response.errorBody().toString())
+                }
+            }
+
+            override fun onFailure(call: Call<ViaCep>, t: Throwable) {
+                Snackbar.make(binding.view7, "Não foi possível executar o serviço de CEP.",
+                    Snackbar.LENGTH_LONG).show()
+
+                Log.e("ERROR", "Falha ao executar o serviço.", t)
+            }
+        }
+
+        if (cep != null) {
+            ViaCepAPI.cep.getCep(cep).enqueue(callback)
+        }
     }
 
     private fun criarPedido(request: OrderRequest?, container: ViewGroup?) {
