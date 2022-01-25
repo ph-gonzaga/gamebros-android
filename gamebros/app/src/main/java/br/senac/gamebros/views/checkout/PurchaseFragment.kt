@@ -18,6 +18,7 @@ class PurchaseFragment : Fragment() {
 
         val bundle = arguments
         val orderId = bundle?.getInt("orderId")
+        Log.i("orderID", orderId.toString())
 
         binding.textPedidoNumero.text = "#"+("00000000" + orderId.toString()).takeLast(4)
 

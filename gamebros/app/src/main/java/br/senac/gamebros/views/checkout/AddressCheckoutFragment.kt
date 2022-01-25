@@ -39,27 +39,48 @@ class AddressCheckoutFragment : Fragment() {
         val subtotalOrder = bundle?.getFloat("subtotalOrder")
         val cartId = bundle?.getInt("cartId")
         val totalOrder = subtotalOrder?.plus(15)
+        val cep = binding.editFieldCEP
 
         binding.textEntregaSubtotal.text = "R$"+subtotalOrder.toString()
         binding.textEntregaTotal.text = "R$"+totalOrder.toString()
 
 
         binding.btnFinalizarCompra.setOnClickListener {
+            var addressNumberTrat = 0
+            if(binding.editFieldNumero.text.toString().isNotEmpty()){
+                addressNumberTrat = binding.editFieldNumero.text.toString().toInt()
+            }
+
             val request = cartId?.let { it1 ->
                 totalOrder?.let { it2 ->
                     OrderRequest(
                         user_id = 1,
                         cart_id = it1,
-                        total_price = it2
+                        total_price = it2,
+                        cep = cep.text.toString(),
+                        address = binding.editFieldEndereco.text.toString(),
+                        address_number = addressNumberTrat,
+                        address_complement = binding.editFieldComplemento.text.toString(),
+                        address_city = binding.editFieldCidade.text.toString(),
+                        address_uf = binding.editFieldUF.text.toString()
                     )
                 }
             }
-            criarPedido(request, container)
+
+            if(request?.cep?.isEmpty() == true ||
+                request?.address?.isEmpty() == true ||
+                request?.address_city?.isEmpty() == true ||
+                request?.address_uf?.isEmpty() == true ||
+                request?.address_number?.equals(0) == true
+            ){
+                Snackbar.make(binding.view7, "Favor preencher todos os campos.", Snackbar.LENGTH_LONG).show()
+            } else {
+                Log.i("request payload", request.toString())
+                criarPedido(request, container)
+            }
         }
 
         binding.btnBuscarCep.setOnClickListener {
-            val cep = binding.editFieldCEP
-
             if(cep.length() != 8){
                 Snackbar.make(binding.view7, "CEP Inválido", Snackbar.LENGTH_LONG).show()
             } else {
@@ -111,6 +132,7 @@ class AddressCheckoutFragment : Fragment() {
             override fun onResponse(call: Call<OrderResponse>, response: Response<OrderResponse>){
                 if(response.isSuccessful){
                     val orderId = response.body()?.order_id
+                    Log.i("callback", response.body().toString())
 
                     val bundle = Bundle()
                     orderId?.let { bundle.putInt("orderId", it) }
