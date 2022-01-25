@@ -26,7 +26,6 @@ class AddressCheckoutFragment : Fragment() {
         .baseUrl(Constants.BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
-    var order_id = Int ?
     lateinit var binding: FragmentAddressCheckoutBinding
 
 
@@ -53,27 +52,33 @@ class AddressCheckoutFragment : Fragment() {
                     )
                 }
             }
-            criarPedido(request)
-
-            container?.let {
-                parentFragmentManager.beginTransaction().replace(it.id,
-                    PurchaseFragment.newInstance()
-                ).addToBackStack("fragCheckout").commit()
-            }
+            criarPedido(request, container)
         }
 
         return binding.root
     }
 
-    private fun criarPedido(request: OrderRequest?) {
+    private fun criarPedido(request: OrderRequest?, container: ViewGroup?) {
         val service = retrofit.create(OrderService::class.java)
         val call = request?.let { service.criarPedido(it) }
-        var order_id = Int
         val callback = object : Callback<OrderResponse> {
             override fun onResponse(call: Call<OrderResponse>, response: Response<OrderResponse>){
                 if(response.isSuccessful){
-                    order_id = response.body()?.order_id
-                } else{
+                    val orderId = response.body()?.order_id
+
+                    val bundle = Bundle()
+                    orderId?.let { bundle.putInt("orderId", it) }
+
+                    val fragment = PurchaseFragment.newInstance()
+                    fragment.arguments = bundle
+
+                    container?.let {
+                        parentFragmentManager.beginTransaction().replace(
+                            it.id,
+                            fragment
+                        ).addToBackStack("fragCheckout").commit()
+                    }
+                } else {
                     response.errorBody()?.let {
                         Log.e("ERROR", it.string())
                     }
