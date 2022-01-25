@@ -33,13 +33,13 @@ class AccountFragment : Fragment() {
             }
         }
 
-        binding.btnEndereco.setOnClickListener {
-            container?.let {
-                parentFragmentManager.beginTransaction().replace(it.id,
-                    AddressFragment.newInstance()
-                ).addToBackStack("fragAccount").commit()
-            }
-        }
+//        binding.btnEndereco.setOnClickListener {
+//            container?.let {
+//                parentFragmentManager.beginTransaction().replace(it.id,
+//                    AddressFragment.newInstance()
+//                ).addToBackStack("fragAccount").commit()
+//            }
+//        }
 
         binding.btnSair.setOnClickListener {
             val intent = Intent(activity, LoginActivity::class.java)
