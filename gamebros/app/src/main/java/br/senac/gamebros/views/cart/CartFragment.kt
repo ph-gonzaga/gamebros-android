@@ -27,7 +27,6 @@ class CartFragment : Fragment() {
         data?.let {
             Log.i("Bundle data card", it.toString())
             Log.i("Bundle data card", it.size.toString())
-
         }
 
         val recycleViewCart = binding.recyclerCartProducts
@@ -53,9 +52,20 @@ class CartFragment : Fragment() {
         binding.textCarrinhoSubtotal.text = "R$" + totalCart.toString()
 
         binding.btnCheckoutEndereco.setOnClickListener {
+            val bundle = Bundle()
+
+            if (totalCart != null) {
+                bundle.putFloat("subtotalOrder", totalCart)
+                bundle.putInt("cartId", data[0].cartId)
+            }
+
+            var fragment = AddressCheckoutFragment.newInstance()
+            fragment.arguments = bundle
+
             container?.let {
-                parentFragmentManager.beginTransaction().replace(it.id,
-                    AddressCheckoutFragment.newInstance()
+                parentFragmentManager.beginTransaction().replace(
+                    it.id,
+                    fragment
                 ).addToBackStack("fragAddressCheckout").commit()
             }
         }

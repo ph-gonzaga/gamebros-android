@@ -8,6 +8,8 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class CartProductsResponse(
+    @SerializedName("cart_id")
+    val cartId: Int,
     @SerializedName("amount")
     val amount: Int,
     @SerializedName("cart_product_id")
