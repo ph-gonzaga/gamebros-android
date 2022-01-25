@@ -10,10 +10,8 @@
         android:layout_width="0dp"
         android:layout_height="80dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
         android:background="@drawable/circular_item"
         android:backgroundTint="#72D1D1D0"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -35,11 +33,13 @@
         android:id="@+id/labelDataPedidoItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginEnd="72dp"
         android:text="10/11/2021"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/cardProduto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/labelStatusPedidoItem"
         app:layout_constraintStart_toEndOf="@+id/labelNumeroPedidoItem"
         app:layout_constraintTop_toTopOf="@+id/cardProduto" />
 
@@ -47,25 +47,15 @@
         android:id="@+id/labelStatusPedidoItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
         android:text="Entregue"
         android:textColor="#170085"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/cardProduto"
-        app:layout_constraintStart_toEndOf="@+id/labelDataPedidoItem"
-        app:layout_constraintTop_toTopOf="@+id/cardProduto" />
-
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/cardProduto"
         app:layout_constraintEnd_toEndOf="@+id/cardProduto"
-        app:layout_constraintStart_toEndOf="@+id/labelStatusPedidoItem"
         app:layout_constraintTop_toTopOf="@+id/cardProduto"
-        app:srcCompat="@drawable/ic_baseline_keyboard_arrow_right_24" />
+        app:layout_constraintVertical_bias="0.508" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

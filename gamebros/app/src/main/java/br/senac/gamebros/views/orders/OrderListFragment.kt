@@ -8,7 +8,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.senac.gamebros.adapter.OrderAdapter
 import br.senac.gamebros.databinding.FragmentListOrdersBinding
+import br.senac.gamebros.model.CartProductsResponse
 import br.senac.gamebros.model.Order
+import br.senac.gamebros.model.OrderRequest
+import br.senac.gamebros.model.OrdersListResponse
 
 
 class OrderListFragment : Fragment() {
@@ -17,54 +20,21 @@ class OrderListFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentListOrdersBinding.inflate(inflater)
 
-        val recycleViewOrder = binding.recycleListOrders
-        recycleViewOrder.layoutManager = LinearLayoutManager(context)
-        recycleViewOrder .setHasFixedSize(true)
+        val bundle = arguments
+        val data = bundle?.getSerializable("data") as ArrayList<OrdersListResponse>
+
+        val recyclerViewOrder = binding.recyclerListOrders
+        recyclerViewOrder.layoutManager = LinearLayoutManager(context)
+        recyclerViewOrder.setHasFixedSize(true)
 
         //Configura o adapter
-        val listaPedidos: MutableList<Order> = mutableListOf()
+        val listaPedidos = ArrayList<OrdersListResponse>()
         val adapterPedidos = OrderAdapter(listaPedidos)
-        recycleViewOrder.adapter = adapterPedidos
+        recyclerViewOrder.adapter = adapterPedidos
 
-        var order1 = Order(
-            "10112021-1",
-            "10/11/2021",
-            "Entregue"
-        )
-
-        listaPedidos.add(order1)
-
-        var order2 = Order(
-            "10112021-1",
-            "10/11/2021",
-            "Entregue"
-        )
-
-        listaPedidos.add(order2)
-
-        var order3 = Order(
-            "10112021-1",
-            "10/11/2021",
-            "Entregue"
-        )
-
-        listaPedidos.add(order3)
-
-//        var order4 = Order(
-//            "10112021-1",
-//            "10/11/2021",
-//            "Entregue"
-//        )
-//
-//        listaPedidos.add(order4)
-//
-//        var order5 = Order(
-//            "10112021-1",
-//            "10/11/2021",
-//            "Entregue"
-//        )
-//
-//        listaPedidos.add(order5)
+        data.forEach {
+            listaPedidos.add(it)
+        }
 
         return binding.root
 
