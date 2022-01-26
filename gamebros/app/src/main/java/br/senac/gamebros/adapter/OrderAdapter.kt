@@ -34,6 +34,7 @@ class OrderAdapter(private val order: ArrayList<OrdersListResponse>): RecyclerVi
 
     override fun getItemCount(): Int = order.size
 
+
     inner class OrderViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val pedido = itemView.findViewById<TextView>(R.id.labelNumeroPedidoItem)
         val data = itemView.findViewById<TextView>(R.id.labelDataPedidoItem)

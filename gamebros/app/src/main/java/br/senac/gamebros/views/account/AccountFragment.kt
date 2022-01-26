@@ -7,7 +7,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import br.senac.gamebros.LoginActivityTest
 import br.senac.gamebros.databinding.FragmentAccountBinding
+import br.senac.gamebros.services.SharedPrefManager
 import br.senac.gamebros.model.OrdersListResponse
 import br.senac.gamebros.services.OrderService
 import br.senac.gamebros.utils.Constants
@@ -27,10 +29,18 @@ class AccountFragment : Fragment() {
         .build()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val shared = SharedPrefManager.getInstance(requireContext())
+
         binding = FragmentAccountBinding.inflate(inflater)
 
         binding.btnMeusPedidos.setOnClickListener {
-            buscarPedidos(1, container)
+            if(shared?.isLoggedIn){
+                shared?.user?.id?.let { it1 -> buscarPedidos(it1, container) }
+            } else {
+                val i = Intent(context, LoginActivityTest::class.java)
+                startActivity(i)
+            }
+
         }
 
         binding.btnCadastro.setOnClickListener {
@@ -42,8 +52,9 @@ class AccountFragment : Fragment() {
         }
 
         binding.btnSair.setOnClickListener {
-            val intent = Intent(activity, LoginActivity::class.java)
-            startActivity(intent)
+            shared.clear()
+//            val intent = Intent(activity, LoginActivity::class.java)
+//            startActivity(intent)
         }
 
         return binding.root
