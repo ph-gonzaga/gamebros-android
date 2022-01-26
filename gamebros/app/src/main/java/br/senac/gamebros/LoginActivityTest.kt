@@ -11,6 +11,7 @@ import br.senac.gamebros.databinding.ActivityLoginTestBinding
 import br.senac.gamebros.model.Login
 import br.senac.gamebros.model.Token
 import br.senac.gamebros.services.ARQUIVO_LOGIN
+import br.senac.gamebros.views.account.SignupFragment
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -67,6 +68,13 @@ class LoginActivityTest : AppCompatActivity() {
 
 
             login.fazerLogin(Login(email, password)).enqueue(callback)
+        }
+
+        binding.btnCadastarUser.setOnClickListener {
+            supportFragmentManager.beginTransaction().replace(
+                R.id.container,
+                SignupFragment.newInstance(),
+            ).addToBackStack("fragSignup").commit()
         }
     }
 }
