@@ -14,6 +14,7 @@ import br.senac.gamebros.model.OrderResponse
 import br.senac.gamebros.model.ViaCep
 import br.senac.gamebros.services.CartsService
 import br.senac.gamebros.services.OrderService
+import br.senac.gamebros.services.SharedPrefManager
 import br.senac.gamebros.utils.Constants
 import com.google.android.material.snackbar.Snackbar
 import retrofit2.Call
@@ -51,19 +52,25 @@ class AddressCheckoutFragment : Fragment() {
                 addressNumberTrat = binding.editFieldNumero.text.toString().toInt()
             }
 
+            val shared = SharedPrefManager.getInstance(requireContext())
+
+            Log.i("LOGGED USER", shared?.user?.id.toString())
+
             val request = cartId?.let { it1 ->
                 totalOrder?.let { it2 ->
-                    OrderRequest(
-                        user_id = 1,
-                        cart_id = it1,
-                        total_price = it2,
-                        cep = cep.text.toString(),
-                        address = binding.editFieldEndereco.text.toString(),
-                        address_number = addressNumberTrat,
-                        address_complement = binding.editFieldComplemento.text.toString(),
-                        address_city = binding.editFieldCidade.text.toString(),
-                        address_uf = binding.editFieldUF.text.toString()
-                    )
+                    shared?.user?.id?.let { it3 ->
+                        OrderRequest(
+                            user_id = it3,
+                            cart_id = it1,
+                            total_price = it2,
+                            cep = cep.text.toString(),
+                            address = binding.editFieldEndereco.text.toString(),
+                            address_number = addressNumberTrat,
+                            address_complement = binding.editFieldComplemento.text.toString(),
+                            address_city = binding.editFieldCidade.text.toString(),
+                            address_uf = binding.editFieldUF.text.toString()
+                        )
+                    }
                 }
             }
 

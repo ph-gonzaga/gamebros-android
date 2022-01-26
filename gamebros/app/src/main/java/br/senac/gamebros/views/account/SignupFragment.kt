@@ -22,10 +22,9 @@ class SignupFragment : Fragment() {
         val shared = SharedPrefManager.getInstance(requireContext())
 
         if(!shared.isLoggedIn){
-
             val i = Intent(context, LoginActivityTest::class.java)
             startActivity(i)
-        }else{
+        } else {
             editFieldNomeConta.setText(shared.user.email)
             editFieldEmailConta.setText(shared.user.name) //invertido mesmo
             editFieldNumero.setText(shared.user.phone)

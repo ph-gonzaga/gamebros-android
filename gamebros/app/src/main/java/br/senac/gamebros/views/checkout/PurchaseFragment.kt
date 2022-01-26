@@ -1,17 +1,20 @@
 package br.senac.gamebros.views.checkout
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import br.senac.gamebros.LoginActivityTest
 import br.senac.gamebros.databinding.FragmentPurchaseBinding
 import br.senac.gamebros.model.CartProductsResponse
 import br.senac.gamebros.model.OrderRequest
 import br.senac.gamebros.model.OrderResponse
 import br.senac.gamebros.model.OrdersListResponse
 import br.senac.gamebros.services.OrderService
+import br.senac.gamebros.services.SharedPrefManager
 import br.senac.gamebros.utils.Constants
 import br.senac.gamebros.views.orders.OrderListFragment
 import retrofit2.Call
@@ -37,7 +40,16 @@ class PurchaseFragment : Fragment() {
         binding.textPedidoNumero.text = "#"+("00000000" + orderId.toString()).takeLast(4)
 
         binding.btnAcessarPedidos.setOnClickListener {
-            buscarPedidos(1, container)
+            val shared = SharedPrefManager.getInstance(requireContext())
+
+            Log.i("USERID", shared.user.id.toString())
+
+            if(shared.isLoggedIn){
+                shared.user.id?.let { it1 -> buscarPedidos(it1, container) }
+            } else {
+                val i = Intent(context, LoginActivityTest::class.java)
+                startActivity(i)
+            }
         }
 
         return binding.root
