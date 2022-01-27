@@ -22,43 +22,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:id="@+id/view"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="72dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/rounded"
-        android:backgroundTint="#F4F4F4"
-        android:elevation="3dp"
-        app:itemIconTint="@drawable/item_selector"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@android:color/transparent"
-        android:elevation="3dp"
-        android:ems="10"
-        android:hint="O que voce procura?"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        android:textColorHint="#5A5A5A"
-        android:textSize="16sp"
-        android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <View
         android:id="@+id/viewDetalheProduto"
         android:layout_width="0dp"
         android:layout_height="450dp"
@@ -70,7 +33,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view" />
+        app:layout_constraintTop_toBottomOf="@+id/textSacolaTituloVazio" />
 
     <Button
         android:id="@+id/btnCategorieProduct"
@@ -102,6 +65,20 @@
 
     <Button
         android:id="@+id/btnCategorieProduct2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/circular_item"
+        android:text="Nintendo Wii"
+        android:textColor="#000000"
+        app:backgroundTint="#F4F4F4"
+        app:layout_constraintEnd_toStartOf="@+id/imageView7"
+        app:layout_constraintStart_toStartOf="@+id/viewDetalheProduto"
+        app:layout_constraintTop_toBottomOf="@+id/btnCategorieProduct1" />
+
+    <Button
+        android:id="@+id/btnCategorieProduct3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -112,7 +89,7 @@
         app:backgroundTint="#F4F4F4"
         app:layout_constraintEnd_toStartOf="@+id/imageView7"
         app:layout_constraintStart_toStartOf="@+id/viewDetalheProduto"
-        app:layout_constraintTop_toBottomOf="@+id/btnCategorieProduct1" />
+        app:layout_constraintTop_toBottomOf="@+id/btnCategorieProduct2" />
 
     <ImageView
         android:id="@+id/imageView7"
