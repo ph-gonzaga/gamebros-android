@@ -114,33 +114,31 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
+            android:layout_marginTop="35dp"
             android:layout_marginEnd="24dp"
-            android:layout_marginBottom="68dp"
+            android:layout_marginBottom="35dp"
             android:background="@drawable/rounded"
             android:text="Salvar"
             android:textSize="20sp"
             android:textStyle="bold"
             app:backgroundTint="#69B7FF"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/imageView5"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewDetalheProduto" />
 
         <ImageView
             android:id="@+id/imageView5"
-            android:layout_width="0dp"
-            android:layout_height="267dp"
+            android:layout_width="329dp"
+            android:layout_height="301dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="34dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginBottom="8dp"
             android:src="@drawable/mega_"
-            app:layout_constraintBottom_toTopOf="@+id/btnPesquisarProduto"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.529"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/viewDetalheProduto"
-            app:layout_constraintVertical_bias="0.159" />
+            app:layout_constraintTop_toBottomOf="@+id/btnPesquisarProduto" />
 
         =
     </androidx.constraintlayout.widget.ConstraintLayout>

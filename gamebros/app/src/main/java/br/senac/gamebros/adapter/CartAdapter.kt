@@ -60,10 +60,6 @@ class CartAdapter(private val cart: ArrayList<CartProductsResponse>): RecyclerVi
         holder.preco.text = "R$" + cart[position].price
 
         // removendo produto do carrinho
-//        holder.lixeira.setOnClickListener {
-//            removerProduto(cart[position].cartProductId, holder)
-//        }
-
         holder.lixeira.setOnClickListener(object: View.OnClickListener {
             override fun onClick(v: View?) {
                 removerProduto(cart[position].cartProductId, holder)
@@ -94,8 +90,6 @@ class CartAdapter(private val cart: ArrayList<CartProductsResponse>): RecyclerVi
             }
         })
     }
-
-
 
     private fun removerProduto(cartProductId: Int, holder: CartViewHolder) {
         val service = retrofit.create(CartsService::class.java)

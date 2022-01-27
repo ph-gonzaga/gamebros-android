@@ -16,7 +16,7 @@
             android:id="@+id/textSacolaTituloVazio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="68dp"
+            android:layout_marginTop="32dp"
             android:text="Sua sacola está vazia!"
             android:textColor="#2C752F"
             android:textSize="24sp"
