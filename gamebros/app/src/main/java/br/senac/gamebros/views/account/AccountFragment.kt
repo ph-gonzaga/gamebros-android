@@ -31,16 +31,15 @@ class AccountFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val shared = SharedPrefManager.getInstance(requireContext())
 
-        binding = FragmentAccountBinding.inflate(inflater)
+        if(shared?.isLoggedIn){
+            binding = FragmentAccountBinding.inflate(inflater)
 
-        binding.btnMeusPedidos.setOnClickListener {
-            if(shared?.isLoggedIn){
+            binding.btnMeusPedidos.setOnClickListener {
                 shared?.user?.id?.let { it1 -> buscarPedidos(it1, container) }
-            } else {
-                val i = Intent(context, LoginActivityTest::class.java)
-                startActivity(i)
             }
-
+        } else {
+            val i = Intent(context, LoginActivityTest::class.java)
+            startActivity(i)
         }
 
         binding.btnCadastro.setOnClickListener {
