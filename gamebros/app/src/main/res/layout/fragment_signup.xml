@@ -110,24 +110,24 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
-            android:id="@+id/btnPesquisarProduto"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="35dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginBottom="35dp"
-            android:background="@drawable/rounded"
-            android:text="Salvar"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:backgroundTint="#69B7FF"
-            app:layout_constraintBottom_toTopOf="@+id/imageView5"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/viewDetalheProduto" />
+<!--        <Button-->
+<!--            android:id="@+id/btnPesquisarProduto"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="24dp"-->
+<!--            android:layout_marginTop="35dp"-->
+<!--            android:layout_marginEnd="24dp"-->
+<!--            android:layout_marginBottom="35dp"-->
+<!--            android:background="@drawable/rounded"-->
+<!--            android:text="Salvar"-->
+<!--            android:textSize="20sp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:backgroundTint="#69B7FF"-->
+<!--            app:layout_constraintBottom_toTopOf="@+id/imageView5"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="1.0"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/viewDetalheProduto" />-->
 
         <ImageView
             android:id="@+id/imageView5"
@@ -139,7 +139,7 @@
             android:src="@drawable/mega_"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnPesquisarProduto" />
+            app:layout_constraintTop_toBottomOf="@+id/editFieldNumeroLayout" />
 
         =
     </androidx.constraintlayout.widget.ConstraintLayout>

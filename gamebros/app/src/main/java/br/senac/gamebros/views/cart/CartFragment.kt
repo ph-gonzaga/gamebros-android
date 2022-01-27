@@ -17,6 +17,7 @@ import br.senac.gamebros.model.Cart
 import br.senac.gamebros.model.CartProductsResponse
 import br.senac.gamebros.services.SharedPrefManager
 import br.senac.gamebros.utils.LoadingDialog
+import br.senac.gamebros.views.login.LoginActivity
 
 class CartFragment : Fragment() {
     lateinit var binding: FragmentCartBinding
@@ -76,7 +77,7 @@ class CartFragment : Fragment() {
                     ).addToBackStack("fragAddressCheckout").commit()
                 }
             } else {
-                val i = Intent(context, LoginActivityTest::class.java)
+                val i = Intent(context, LoginActivity::class.java)
                 startActivity(i)
             }
 
