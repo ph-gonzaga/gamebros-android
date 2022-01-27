@@ -41,7 +41,7 @@
         android:background="@android:color/transparent"
         android:elevation="1dp"
         android:ems="10"
-        android:hint="O que voce procura?"
+        android:hint="Olá, Bem Vindex!"
         android:inputType="textPersonName"
         android:textAlignment="center"
         android:textColorHint="#5A5A5A"
