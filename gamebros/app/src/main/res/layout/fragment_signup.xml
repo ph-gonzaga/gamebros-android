@@ -7,11 +7,13 @@
     android:layout_height="match_parent"
     android:background="@color/home"
     android:textSize="16sp"
+    android:id="@+id/container"
     android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         tools:context=".views.account.AccountFragment">
 
         <TextView

@@ -12,6 +12,7 @@ import br.senac.gamebros.model.Login
 import br.senac.gamebros.model.Token
 import br.senac.gamebros.services.ARQUIVO_LOGIN
 import br.senac.gamebros.views.account.SignupFragment
+import br.senac.gamebros.views.login.LoginCreateFragment
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -80,7 +81,7 @@ class LoginActivityTest : AppCompatActivity() {
         binding.btnCadastarUser.setOnClickListener {
             supportFragmentManager.beginTransaction().replace(
                 R.id.container,
-                SignupFragment.newInstance(),
+                LoginCreateFragment.newInstance(),
             ).addToBackStack("fragSignup").commit()
         }
 

@@ -29,11 +29,10 @@ class AccountFragment : Fragment() {
         .build()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        binding = FragmentAccountBinding.inflate(inflater)
         val shared = SharedPrefManager.getInstance(requireContext())
 
         if(shared?.isLoggedIn){
-            binding = FragmentAccountBinding.inflate(inflater)
-
             binding.btnMeusPedidos.setOnClickListener {
                 shared?.user?.id?.let { it1 -> buscarPedidos(it1, container) }
             }
