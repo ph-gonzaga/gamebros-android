@@ -36,7 +36,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textSacolaTituloVazio" />
 
     <Button
-        android:id="@+id/btnCategorieProduct"
+        android:id="@+id/btnNintendoSwitchCategory"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -50,7 +50,7 @@
         app:layout_constraintTop_toTopOf="@+id/viewDetalheProduto" />
 
     <Button
-        android:id="@+id/btnCategorieProduct1"
+        android:id="@+id/btnNintendo3DSCategory"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -61,10 +61,10 @@
         app:backgroundTint="#F4F4F4"
         app:layout_constraintEnd_toStartOf="@+id/imageView7"
         app:layout_constraintStart_toStartOf="@+id/viewDetalheProduto"
-        app:layout_constraintTop_toBottomOf="@+id/btnCategorieProduct" />
+        app:layout_constraintTop_toBottomOf="@+id/btnNintendoSwitchCategory" />
 
     <Button
-        android:id="@+id/btnCategorieProduct2"
+        android:id="@+id/btnNintendoWiiCategory"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -75,10 +75,10 @@
         app:backgroundTint="#F4F4F4"
         app:layout_constraintEnd_toStartOf="@+id/imageView7"
         app:layout_constraintStart_toStartOf="@+id/viewDetalheProduto"
-        app:layout_constraintTop_toBottomOf="@+id/btnCategorieProduct1" />
+        app:layout_constraintTop_toBottomOf="@+id/btnNintendo3DSCategory" />
 
     <Button
-        android:id="@+id/btnCategorieProduct3"
+        android:id="@+id/btnAcessoriosCategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -89,7 +89,7 @@
         app:backgroundTint="#F4F4F4"
         app:layout_constraintEnd_toStartOf="@+id/imageView7"
         app:layout_constraintStart_toStartOf="@+id/viewDetalheProduto"
-        app:layout_constraintTop_toBottomOf="@+id/btnCategorieProduct2" />
+        app:layout_constraintTop_toBottomOf="@+id/btnNintendoWiiCategory" />
 
     <ImageView
         android:id="@+id/imageView7"
