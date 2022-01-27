@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.content.Intent
 import android.content.SharedPreferences
+import android.os.Handler
 import android.util.Log
 import android.widget.Toast
 import br.senac.gamebros.BottomNavigationActivity
@@ -16,6 +17,7 @@ import br.senac.gamebros.databinding.FragmentLoginUserBinding
 import br.senac.gamebros.model.Login
 import br.senac.gamebros.model.Token
 import br.senac.gamebros.services.ARQUIVO_LOGIN
+import br.senac.gamebros.utils.LoadingDialog
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -23,6 +25,7 @@ import retrofit2.Response
 
 class LoginUserFragment : Fragment() {
     lateinit var binding: FragmentLoginUserBinding
+    var loading = LoadingDialog(this)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentLoginUserBinding.inflate(inflater)
@@ -31,13 +34,21 @@ class LoginUserFragment : Fragment() {
 //            val intent = Intent(activity, BottomNavigationActivity::class.java)
 //            startActivity(intent)
 
+            loading.startLoading()
+
             val email = binding.editFieldUserEmail.text.toString()
             val password = binding.editFieldSenhaEmail.text.toString()
 
             if(validaFormulario() == true){
                 validaFormulario()
-            }else{
 
+                val handler = Handler()
+                handler.postDelayed(object: Runnable {
+                    override fun run() {
+                        loading.isDismiss()
+                    }
+                }, 1000)
+            } else {
                 val callback = object: Callback<Token> {
                     override fun onResponse(call: Call<Token>, response: Response<Token>) {
                         val responseLogin = response.body()
@@ -57,11 +68,25 @@ class LoginUserFragment : Fragment() {
 
                             Toast.makeText(activity, "Login efetuado com sucesso.", Toast.LENGTH_LONG).show()
 
+                            val handler = Handler()
+                            handler.postDelayed(object: Runnable {
+                                override fun run() {
+                                    loading.isDismiss()
+                                }
+                            }, 1000)
+
                             val intent = Intent(activity, BottomNavigationActivity::class.java)
                             startActivityForResult(intent,1)
 
 
                         }else{
+                            val handler = Handler()
+                            handler.postDelayed(object: Runnable {
+                                override fun run() {
+                                    loading.isDismiss()
+                                }
+                            }, 1000)
+
                             var msg =  "Não foi possivel efetuar o login."
                             Toast.makeText(activity, msg, Toast.LENGTH_LONG).show()
                             response.errorBody()?.let {
@@ -71,15 +96,18 @@ class LoginUserFragment : Fragment() {
                     }
 
                     override fun onFailure(call: Call<Token>, t: Throwable) {
+                        val handler = Handler()
+                        handler.postDelayed(object: Runnable {
+                            override fun run() {
+                                loading.isDismiss()
+                            }
+                        }, 1000)
+
                         Toast.makeText(activity,"", Toast.LENGTH_LONG).show()
                         Log.e("LoginActivity","onCreate",t)
                     }
 
                 }
-
-
-
-
                 RetrofitInstance.login.fazerLogin(Login(email, password)).enqueue(callback)
 
             }

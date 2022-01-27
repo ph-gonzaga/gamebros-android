@@ -8,6 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="azul_logo">#4eabe5</color>
+    <color name="vermelho_logo">#ec3125</color>
 
     <color name="home">#FBFBFB</color>
     <color name="disabled">#F2F9FF</color>

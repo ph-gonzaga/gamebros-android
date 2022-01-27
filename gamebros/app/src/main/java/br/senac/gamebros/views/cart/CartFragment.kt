@@ -16,10 +16,11 @@ import br.senac.gamebros.databinding.FragmentCartBinding
 import br.senac.gamebros.model.Cart
 import br.senac.gamebros.model.CartProductsResponse
 import br.senac.gamebros.services.SharedPrefManager
+import br.senac.gamebros.utils.LoadingDialog
 
 class CartFragment : Fragment() {
     lateinit var binding: FragmentCartBinding
-
+    var loading = LoadingDialog(this)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentCartBinding.inflate(inflater)

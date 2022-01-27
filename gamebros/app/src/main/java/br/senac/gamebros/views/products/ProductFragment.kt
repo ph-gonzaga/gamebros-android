@@ -1,11 +1,13 @@
 package br.senac.gamebros.views.products
 
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import br.senac.gamebros.databinding.FragmentProductBinding
 import br.senac.gamebros.model.CartRequest
 import br.senac.gamebros.model.CartResponse
@@ -14,6 +16,7 @@ import br.senac.gamebros.services.CartsService
 import br.senac.gamebros.services.ProductsService
 import br.senac.gamebros.utils.Constants.Companion.BASE_URL
 import br.senac.gamebros.utils.Constants.Companion.RAW_URL
+import br.senac.gamebros.utils.LoadingDialog
 import br.senac.gamebros.views.cart.CartFragment
 import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
@@ -27,23 +30,25 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class ProductFragment : Fragment() {
     lateinit var binding: FragmentProductBinding
-
+    var loading = LoadingDialog(this)
     val retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentProductBinding.inflate(inflater)
+
+        loading.startLoading()
 
         val bundle = arguments
         val data = bundle?.getString("data")
         data?.let {
             Log.i("Bundle data", it)
 
-            atualizarProduto(it.toInt())
+            atualizarProduto(it.toInt(), loading)
         }
-
 
         binding.btnComprarItem.setOnClickListener {
             val request = data?.toInt()?.let { it1 ->
@@ -53,13 +58,14 @@ class ProductFragment : Fragment() {
                 )
             }
 
-            addProduto(request)
+            addProduto(request, loading)
         }
 
         return binding.root
     }
 
-    private fun addProduto(data: CartRequest?) {
+    private fun addProduto(data: CartRequest?, loading: LoadingDialog) {
+        loading.startLoading()
         val service = retrofit.create(CartsService::class.java)
         Log.i("data", data.toString())
         val call = data?.let { service.adicionarProdutoCarrinho(it) }
@@ -67,9 +73,23 @@ class ProductFragment : Fragment() {
         val callback = object : Callback<CartResponse> {
             override fun onResponse(call: Call<CartResponse>, response: Response<CartResponse>) {
                 if(response.isSuccessful){
+                    val handler = Handler()
+                    handler.postDelayed(object: Runnable {
+                        override fun run() {
+                            loading.isDismiss()
+                        }
+                    }, 1000)
+
                     Log.i("RESPONSE", response.body().toString())
                     Snackbar.make(binding.container, "Produto adicionado ao carrinho.", Snackbar.LENGTH_LONG).show()
-                } else{
+                } else {
+                    val handler = Handler()
+                    handler.postDelayed(object: Runnable {
+                        override fun run() {
+                            loading.isDismiss()
+                        }
+                    }, 1000)
+
                     Snackbar.make(
                         binding.container,
                         "Não foi possível adicionar ao carrinho.",
@@ -90,7 +110,7 @@ class ProductFragment : Fragment() {
         call?.enqueue(callback)
     }
 
-    fun atualizarProduto(id: Int){
+    fun atualizarProduto(id: Int, loading: LoadingDialog){
         val service = retrofit.create(ProductsService::class.java)
         val call = service.detalheProduto(id)
 
@@ -99,8 +119,23 @@ class ProductFragment : Fragment() {
                 if(response.isSuccessful){
                     val listaProdutos = response.body()
 
+                    val handler = Handler()
+                    handler.postDelayed(object: Runnable {
+                        override fun run() {
+                            loading.isDismiss()
+                        }
+                    }, 1000)
+
                     atualizarUI(listaProdutos)
-                } else{
+                } else {
+
+                    val handler = Handler()
+                    handler.postDelayed(object: Runnable {
+                        override fun run() {
+                            loading.isDismiss()
+                        }
+                    }, 1000)
+
                     Snackbar.make(binding.container, "Não é possível atualizar produtos", Snackbar.LENGTH_LONG).show()
 
                     Log.e("ERROR", response.errorBody().toString())
@@ -125,6 +160,7 @@ class ProductFragment : Fragment() {
         binding.textDetalhesConteudo.text = produto?.description
         binding.textNomeCategoria.text = produto?.category_name
         binding.textNomeJogos.text = produto?.subCategory
+
     }
 
     companion object {

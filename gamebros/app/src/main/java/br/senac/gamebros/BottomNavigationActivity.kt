@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import br.senac.gamebros.databinding.ActivityBottomNavigationBinding
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.fragment.app.Fragment
@@ -12,6 +13,8 @@ import br.senac.gamebros.model.CartProductsResponse
 import br.senac.gamebros.services.CartsService
 import br.senac.gamebros.services.SharedPrefManager
 import br.senac.gamebros.utils.Constants
+import br.senac.gamebros.utils.LoadingDialog
+import br.senac.gamebros.utils.LoadingDialogActivity
 import br.senac.gamebros.views.account.AccountFragment
 import br.senac.gamebros.views.cart.CartEmptyFragment
 import br.senac.gamebros.views.cart.CartFragment
@@ -26,6 +29,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class BottomNavigationActivity : AppCompatActivity() {
     lateinit var binding: ActivityBottomNavigationBinding
+    var loading = LoadingDialogActivity(this)
 
     val retrofit = Retrofit.Builder()
         .baseUrl(Constants.BASE_URL)
@@ -70,6 +74,8 @@ class BottomNavigationActivity : AppCompatActivity() {
     }
 
     private fun buscaProdutosCarrinho(){
+        loading.startLoading()
+
         // mostra fragmento default
         replaceFragment(CartEmptyFragment())
 
@@ -80,6 +86,13 @@ class BottomNavigationActivity : AppCompatActivity() {
         val callback = object : Callback<Cart> {
             override fun onResponse(call: Call<Cart>, response: Response<Cart>) {
                 if(response.isSuccessful){
+                    val handler = Handler()
+                    handler.postDelayed(object: Runnable {
+                        override fun run() {
+                            loading.isDismiss()
+                        }
+                    }, 1000)
+
                     val listaProdutos = response.body()
                     Log.i("Total", listaProdutos?.totalCarrinho?.toInt().toString())
                     if(listaProdutos?.totalCarrinho?.toInt()!! > 0){
@@ -97,7 +110,14 @@ class BottomNavigationActivity : AppCompatActivity() {
 
                     Log.i("Listagem de produtos - cart", listaProdutos.toString())
 
-                } else{
+                } else {
+                    val handler = Handler()
+                    handler.postDelayed(object: Runnable {
+                        override fun run() {
+                            loading.isDismiss()
+                        }
+                    }, 1000)
+
                     Snackbar.make(
                         binding.container,
                         "Não é possível atualizar produtos",
@@ -108,6 +128,13 @@ class BottomNavigationActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<Cart>, t: Throwable) {
+                val handler = Handler()
+                handler.postDelayed(object: Runnable {
+                    override fun run() {
+                        loading.isDismiss()
+                    }
+                }, 1000)
+
                 Snackbar.make(
                     binding.container,
                     "Não é possível se conectar ao servidor",
