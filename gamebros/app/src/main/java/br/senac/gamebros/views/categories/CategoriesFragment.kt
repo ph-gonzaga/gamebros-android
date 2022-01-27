@@ -22,10 +22,58 @@ class CategoriesFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentCategoriesBinding.inflate(inflater)
 
-        binding.btnCategorieProduct.setOnClickListener {
+        binding.btnNintendoSwitchCategory.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putInt("categoryId", 1)
+
+            val fragment = ListProductFragment.newInstance()
+            fragment.arguments = bundle
+
             container?.let {
                 parentFragmentManager.beginTransaction().replace(it.id,
-                    ListProductFragment.newInstance()
+                    fragment
+                ).addToBackStack("fragProduct").commit()
+            }
+        }
+
+        binding.btnNintendoWiiCategory.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putInt("categoryId", 2)
+
+            val fragment = ListProductFragment.newInstance()
+            fragment.arguments = bundle
+
+            container?.let {
+                parentFragmentManager.beginTransaction().replace(it.id,
+                    fragment
+                ).addToBackStack("fragProduct").commit()
+            }
+        }
+
+        binding.btnNintendo3DSCategory.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putInt("categoryId", 3)
+
+            val fragment = ListProductFragment.newInstance()
+            fragment.arguments = bundle
+
+            container?.let {
+                parentFragmentManager.beginTransaction().replace(it.id,
+                    fragment
+                ).addToBackStack("fragProduct").commit()
+            }
+        }
+
+        binding.btnAcessoriosCategory.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putInt("categoryId", 4)
+
+            val fragment = ListProductFragment.newInstance()
+            fragment.arguments = bundle
+
+            container?.let {
+                parentFragmentManager.beginTransaction().replace(it.id,
+                    fragment
                 ).addToBackStack("fragProduct").commit()
             }
         }
