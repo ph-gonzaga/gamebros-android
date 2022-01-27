@@ -20,14 +20,7 @@ class LoginCreateFragment : Fragment() {
             val intent = Intent(activity, BottomNavigationActivity::class.java)
             startActivity(intent)
         }
-
-//        binding.btnLoginUser.setOnClickListener {
-//            container?.let {
-//                parentFragmentManager.beginTransaction().replace(it.id,
-//                    LoginUserFragment.newInstance()
-//                ).addToBackStack("fragLoginAuth").commit()
-//            }
-//        }
+        
 
         return binding.root
 
