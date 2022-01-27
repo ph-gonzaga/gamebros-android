@@ -27,6 +27,9 @@ class LoginActivityTest : AppCompatActivity() {
             val email = binding.editFieldUserEmail.text.toString()
             val password = binding.editFieldSenhaEmail.text.toString()
 
+            if(validaFormulario() == true){
+                validaFormulario()
+            }else{
 
             val callback = object: Callback<Token> {
                 override fun onResponse(call: Call<Token>, response: Response<Token>) {
@@ -67,7 +70,11 @@ class LoginActivityTest : AppCompatActivity() {
             }
 
 
+
+
             login.fazerLogin(Login(email, password)).enqueue(callback)
+
+            }
         }
 
         binding.btnCadastarUser.setOnClickListener {
@@ -76,5 +83,24 @@ class LoginActivityTest : AppCompatActivity() {
                 SignupFragment.newInstance(),
             ).addToBackStack("fragSignup").commit()
         }
+
     }
+
+
+    private fun validaFormulario(): Boolean {
+
+        var error = false
+
+        if (binding.editFieldUserEmail.text.toString().isEmpty()) {
+            binding.editFieldUserEmail.error = "E-mail ou CPF é obrigatório"
+            error = true
+        }
+        if (binding.editFieldSenhaEmail.text.toString().isEmpty()) {
+            binding.editFieldSenhaEmail.error = "A Senha é obrigatória"
+            error = true
+        }
+
+        return error
+    }
+
 }
