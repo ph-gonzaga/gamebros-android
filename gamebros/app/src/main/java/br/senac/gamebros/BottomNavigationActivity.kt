@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import br.senac.gamebros.databinding.ActivityBottomNavigationBinding
 import android.os.Bundle
 import android.util.Log
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.fragment.app.Fragment
 import br.senac.gamebros.model.Cart
 import br.senac.gamebros.model.CartProductsResponse
 import br.senac.gamebros.services.CartsService
+import br.senac.gamebros.services.SharedPrefManager
 import br.senac.gamebros.utils.Constants
 import br.senac.gamebros.views.account.AccountFragment
 import br.senac.gamebros.views.cart.CartEmptyFragment
