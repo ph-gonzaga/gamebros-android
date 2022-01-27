@@ -37,7 +37,7 @@ class AccountFragment : Fragment() {
             if(shared?.isLoggedIn){
                 shared?.user?.id?.let { it1 -> buscarPedidos(it1, container) }
             } else {
-                val i = Intent(context, LoginActivityTest::class.java)
+                val i = Intent(context, LoginActivity::class.java)
                 startActivity(i)
             }
 
