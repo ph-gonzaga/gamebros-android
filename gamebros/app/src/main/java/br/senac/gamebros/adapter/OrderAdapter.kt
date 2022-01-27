@@ -29,7 +29,7 @@ class OrderAdapter(private val order: ArrayList<OrdersListResponse>): RecyclerVi
 
         holder.pedido.text = "#"+("00000000" + order[position].id.toString()).takeLast(4)
         holder.data.text = dateTimeFormat.format(date).toString()
-        holder.status.text = "Entregue"
+        holder.status.text = "Aprovado"
     }
 
     override fun getItemCount(): Int = order.size
