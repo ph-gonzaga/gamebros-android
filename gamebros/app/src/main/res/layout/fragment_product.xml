@@ -15,6 +15,8 @@
         tools:context=".views.account.AccountFragment"
         android:id="@id/container">
 
+
+
         <TextView
             android:id="@+id/textSacolaTituloVazio"
             android:layout_width="wrap_content"
@@ -276,6 +278,16 @@
             app:layout_constraintStart_toEndOf="@+id/textCategoriaTitulo2"
             app:layout_constraintTop_toBottomOf="@+id/textNomeCategoria" />
 
-        =
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="@style/Base.Widget.AppCompat.ProgressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/viewDetalheProduto"
+            app:layout_constraintTop_toBottomOf="@+id/imageDetalheProduto"
+            tools:layout_editor_absoluteX="0dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

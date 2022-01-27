@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.content.Intent
+import android.content.SharedPreferences
 import android.util.Log
 import android.widget.Toast
 import br.senac.gamebros.BottomNavigationActivity
@@ -44,7 +45,7 @@ class LoginUserFragment : Fragment() {
                         Log.e("RESPONSE", responseLogin.toString())
 
                         if (responseLogin?.token != null){
-                            val editor = getSharedPreferences(ARQUIVO_LOGIN, Context.MODE_PRIVATE).edit()
+                            val editor = activity!!.getSharedPreferences(ARQUIVO_LOGIN, Context.MODE_PRIVATE).edit()
                             editor.putInt("id", responseLogin?.id)
                             editor.putString("token", responseLogin?.token)
                             editor.putString("name", responseLogin?.name)
@@ -55,7 +56,6 @@ class LoginUserFragment : Fragment() {
                             editor.apply()
 
                             Toast.makeText(activity, "Login efetuado com sucesso.", Toast.LENGTH_LONG).show()
-
 
                             val intent = Intent(activity, BottomNavigationActivity::class.java)
                             startActivityForResult(intent,1)
