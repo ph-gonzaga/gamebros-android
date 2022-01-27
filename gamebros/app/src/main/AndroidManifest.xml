@@ -3,6 +3,7 @@
     package="br.senac.gamebros">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
         android:allowBackup="true"
@@ -10,12 +11,15 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.Gamebros">
+        android:theme="@style/Theme.Gamebros"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".QrCodeActivity"
+            android:exported="false" />
         <activity
             android:name=".SplashActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,7 +27,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="br.senac.gamebros.views.login.LoginActivity"
+            android:name=".views.login.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
