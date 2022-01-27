@@ -5,7 +5,7 @@ import br.senac.gamebros.model.Product
 import retrofit2.Response
 
 class Repository {
-    suspend fun listarProdutos(): Response<List<Product>> {
-        return RetrofitInstance.productsAPI.listarProdutos()
+    suspend fun listarProdutos(categoryId: Int): Response<List<Product>> {
+        return RetrofitInstance.productsAPI.listarProdutos(categoryId)
     }
 }

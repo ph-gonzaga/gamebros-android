@@ -2,6 +2,7 @@ package br.senac.gamebros.views.checkout
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -16,6 +17,7 @@ import br.senac.gamebros.model.OrdersListResponse
 import br.senac.gamebros.services.OrderService
 import br.senac.gamebros.services.SharedPrefManager
 import br.senac.gamebros.utils.Constants
+import br.senac.gamebros.utils.LoadingDialog
 import br.senac.gamebros.views.orders.OrderListFragment
 import retrofit2.Call
 import retrofit2.Callback
@@ -25,6 +27,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class PurchaseFragment : Fragment() {
     lateinit var binding: FragmentPurchaseBinding
+    var loading = LoadingDialog(this)
     val retrofit = Retrofit.Builder()
         .baseUrl(Constants.BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
@@ -56,12 +59,14 @@ class PurchaseFragment : Fragment() {
     }
 
     private fun buscarPedidos(userId: Int, container: ViewGroup?) {
+        loading.startLoading()
         val service = retrofit.create(OrderService::class.java)
         val call = userId?.let { service.buscarPedidos(it) }
 
         val callback = object : Callback<List<OrdersListResponse>> {
             override fun onResponse(call: Call<List<OrdersListResponse>>, response: Response<List<OrdersListResponse>>){
                 if(response.isSuccessful){
+
                     Log.i("callback", response.body().toString())
                     val listaPedidos = response.body()
                     val list = ArrayList<OrdersListResponse>(listaPedidos)
@@ -73,6 +78,13 @@ class PurchaseFragment : Fragment() {
                     val fragment = OrderListFragment.newInstance()
                     fragment.arguments = bundle
 
+                    val handler = Handler()
+                    handler.postDelayed(object: Runnable {
+                        override fun run() {
+                            loading.isDismiss()
+                        }
+                    }, 1000)
+
                     container?.let {
                         parentFragmentManager.beginTransaction().replace(
                             it.id,
@@ -80,6 +92,13 @@ class PurchaseFragment : Fragment() {
                         ).addToBackStack("fragCheckout").commit()
                     }
                 } else {
+                    val handler = Handler()
+                    handler.postDelayed(object: Runnable {
+                        override fun run() {
+                            loading.isDismiss()
+                        }
+                    }, 1000)
+
                     response.errorBody()?.let {
                         Log.e("ERROR", it.string())
                     }
@@ -87,6 +106,13 @@ class PurchaseFragment : Fragment() {
             }
 
             override fun onFailure(call: Call<List<OrdersListResponse>>, t: Throwable) {
+                val handler = Handler()
+                handler.postDelayed(object: Runnable {
+                    override fun run() {
+                        loading.isDismiss()
+                    }
+                }, 1000)
+
                 Log.e("ERROR", "Falha ao executar serviço", t)
             }
         }

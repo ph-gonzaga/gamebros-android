@@ -14,7 +14,6 @@
         android:layout_height="wrap_content"
         tools:context=".views.account.AccountFragment"
         android:id="@id/container">
-
         <TextView
             android:id="@+id/textSacolaTituloVazio"
             android:layout_width="wrap_content"
@@ -276,6 +275,6 @@
             app:layout_constraintStart_toEndOf="@+id/textCategoriaTitulo2"
             app:layout_constraintTop_toBottomOf="@+id/textNomeCategoria" />
 
-        =
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

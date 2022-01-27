@@ -22,6 +22,8 @@ class ProductAdapter(val listener: (Product) -> Unit) : RecyclerView.Adapter<Pro
     class ProductViewHolder(private val binding: ItemProductBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(product: Product){
             binding.textNomeProduto.text = product.name
+            binding.textCategoriaProduto.text = product.category_name
+            binding.textSubCategoriaProduto.text = product.subCategory
             binding.textPrecoProduto.text = "R$" + product.price
 
             Picasso.get().load(RAW_URL + product.image).into(binding.imageProduto)
