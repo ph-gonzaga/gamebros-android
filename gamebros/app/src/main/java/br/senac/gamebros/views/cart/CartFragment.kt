@@ -1,5 +1,6 @@
 package br.senac.gamebros.views.cart
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -7,12 +8,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import br.senac.gamebros.LoginActivityTest
 import br.senac.gamebros.R
 import br.senac.gamebros.adapter.CartAdapter
 import br.senac.gamebros.views.checkout.AddressCheckoutFragment
 import br.senac.gamebros.databinding.FragmentCartBinding
 import br.senac.gamebros.model.Cart
 import br.senac.gamebros.model.CartProductsResponse
+import br.senac.gamebros.services.SharedPrefManager
 
 class CartFragment : Fragment() {
     lateinit var binding: FragmentCartBinding
@@ -52,22 +55,30 @@ class CartFragment : Fragment() {
         binding.textCarrinhoSubtotal.text = "R$" + totalCart.toString()
 
         binding.btnCheckoutEndereco.setOnClickListener {
-            val bundle = Bundle()
+            val shared = SharedPrefManager.getInstance(requireContext())
 
-            if (totalCart != null) {
-                bundle.putFloat("subtotalOrder", totalCart)
-                bundle.putInt("cartId", data[0].cartId)
+            if(shared.isLoggedIn){
+                val bundle = Bundle()
+
+                if (totalCart != null) {
+                    bundle.putFloat("subtotalOrder", totalCart)
+                    bundle.putInt("cartId", data[0].cartId)
+                }
+
+                var fragment = AddressCheckoutFragment.newInstance()
+                fragment.arguments = bundle
+
+                container?.let {
+                    parentFragmentManager.beginTransaction().replace(
+                        it.id,
+                        fragment
+                    ).addToBackStack("fragAddressCheckout").commit()
+                }
+            } else {
+                val i = Intent(context, LoginActivityTest::class.java)
+                startActivity(i)
             }
 
-            var fragment = AddressCheckoutFragment.newInstance()
-            fragment.arguments = bundle
-
-            container?.let {
-                parentFragmentManager.beginTransaction().replace(
-                    it.id,
-                    fragment
-                ).addToBackStack("fragAddressCheckout").commit()
-            }
         }
         return binding.root
     }

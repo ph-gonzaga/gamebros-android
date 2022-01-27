@@ -7,8 +7,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.senac.gamebros.R
 import br.senac.gamebros.model.Order
+import br.senac.gamebros.model.OrderRequest
+import br.senac.gamebros.model.OrdersListResponse
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
-class OrderAdapter(private val order: MutableList<Order>): RecyclerView.Adapter<OrderAdapter.OrderViewHolder>() {
+class OrderAdapter(private val order: ArrayList<OrdersListResponse>): RecyclerView.Adapter<OrderAdapter.OrderViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrderViewHolder {
         // Cria o item da lista
@@ -19,9 +24,12 @@ class OrderAdapter(private val order: MutableList<Order>): RecyclerView.Adapter<
 
     override fun onBindViewHolder(holder: OrderViewHolder, position: Int) {
         // Exibe o item da lista
-        holder.pedido.text = order[position].pedido
-        holder.data.text = order[position].data
-        holder.status.text = order[position].status
+        val date = Calendar.getInstance().time
+        var dateTimeFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+
+        holder.pedido.text = "#"+("00000000" + order[position].id.toString()).takeLast(4)
+        holder.data.text = dateTimeFormat.format(date).toString()
+        holder.status.text = "Aprovado"
     }
 
     override fun getItemCount(): Int = order.size
